@@ -1,0 +1,38 @@
+name: Deploy to EC2
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Copy .env file
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USER: ${{ secrets.EC2_USER }}
+        EC2_KEY: ${{ secrets.EC2_KEY }}
+      run: |
+        echo "$EC2_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        ssh -o StrictHostKeyChecking=no -i private_key.pem $EC2_USER@$EC2_HOST << 'EOF'
+          echo "${{ secrets.ENV_FILE }}" > /home/ubuntu/koenigskristall-shop-backend/.env
+          chmod 600 /home/ubuntu/koenigskristall-shop-backend/.env
+        EOF
+    - name: Deploy to EC2
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USER: ${{ secrets.EC2_USER }}
+        EC2_KEY: ${{ secrets.EC2_KEY }}
+      run: |
+        echo "$EC2_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        ssh -o StrictHostKeyChecking=no -i private_key.pem $EC2_USER@$EC2_HOST << 'EOF'
+          cd /home/ubuntu/koenigskristall-shop-backend || exit 1
+          git pull origin master || exit 1
+          npm install || exit 1
+          pm2 restart koenigskristall-shop-backend || exit 1
+        EOF
+        rm private_key.pem
