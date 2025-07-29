@@ -52,18 +52,6 @@ const loginValidation = [
 ];
 
 /**
- * Cart item validation rules
- */
-const cartItemValidation = [
-  body('productId')
-    .isInt({ min: 1 })
-    .withMessage('Valid product ID is required'),
-  body('quantity')
-    .isInt({ min: 1 })
-    .withMessage('Quantity must be at least 1')
-];
-
-/**
  * Order creation validation rules
  */
 const orderValidation = [
@@ -114,7 +102,6 @@ module.exports = {
   validate,
   registerValidation,
   loginValidation,
-  cartItemValidation,
   orderValidation,
   orderStatusValidation,
   productQuantityValidation

@@ -8,7 +8,6 @@ require('dotenv').config();
 // Import routes
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
-const cartRoutes = require('./routes/cart');
 const orderRoutes = require('./routes/orders');
 const paymentRoutes = require('./routes/payments');
 const adminRoutes = require('./routes/admin');
@@ -26,7 +25,6 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
-app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
