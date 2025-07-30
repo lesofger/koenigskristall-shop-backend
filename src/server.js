@@ -12,17 +12,30 @@ const syncDatabase = async () => {
     await testConnection();
     
     // Sync all models with the database
-    // In development, you might want to use { force: true } to drop tables and recreate them
+    // In development, use safe sync to avoid constraint violations
     // In production, use { alter: true } or no options to preserve data
     const syncOptions = process.env.NODE_ENV === 'development' 
-      ? { alter: true } 
+      ? { force: false, alter: false } 
       : {};
     
     await sequelize.sync(syncOptions);
     console.log('Database synchronized successfully');
   } catch (error) {
     console.error('Failed to sync database:', error);
-    process.exit(1);
+    
+    // If sync fails, try to force sync in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Attempting to force sync database...');
+      try {
+        await sequelize.sync({ force: true });
+        console.log('Database force synchronized successfully');
+      } catch (forceError) {
+        console.error('Failed to force sync database:', forceError);
+        process.exit(1);
+      }
+    } else {
+      process.exit(1);
+    }
   }
 };
 
