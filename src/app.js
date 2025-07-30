@@ -10,6 +10,7 @@ const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 const paymentRoutes = require('./routes/payments');
+const cartRoutes = require('./routes/cart');
 const adminRoutes = require('./routes/admin');
 
 // Create Express app
@@ -19,6 +20,11 @@ const app = express();
 app.use(helmet()); // Security headers
 app.use(cors()); // Enable CORS
 app.use(morgan('dev')); // HTTP request logger
+
+// Raw body parsing for Stripe webhooks (must come before JSON parsing)
+app.use('/api/payments/webhook', express.raw({ type: 'application/json' }));
+
+// JSON and URL-encoded body parsing for other routes
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
@@ -27,6 +33,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/cart', cartRoutes);
 app.use('/api/admin', adminRoutes);
 
 // Root route

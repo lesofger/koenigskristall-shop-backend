@@ -12,7 +12,6 @@ const shopData = [
         category: "Bergkristall",
         image: "/images/BergkristallRoh.JPEG",
         quantity: 999
-        
     },
     {
         id: 2,
@@ -208,7 +207,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Orangencalcit"
+        category: "Orangencalcit",
+        quantity: 999
     },
     {
         id: 23,
@@ -216,7 +216,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 8.00,
         image: "/images/product2.jpg",
-        category: "Karneol"
+        category: "Karneol",
+        quantity: 999
     },
     {
         id: 24,
@@ -224,7 +225,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 8.00,
         image: "/images/product2.jpg",
-        category: "Karneol"
+        category: "Karneol",
+        quantity: 999
     },
     {
         id: 25,
@@ -232,7 +234,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Karneol"
+        category: "Karneol",
+        quantity: 999
     },
     {
         id: 26,
@@ -240,7 +243,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Mondstein"
+        category: "Mondstein",
+        quantity: 999
     },
     {
         id: 27,
@@ -248,7 +252,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 8.00,
         image: "/images/product2.jpg",
-        category: "Mondstein"
+        category: "Mondstein",
+        quantity: 999
     },
     {
         id: 28,
@@ -256,7 +261,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 16.00,
         image: "/images/product2.jpg",
-        category: "Mondstein"
+        category: "Mondstein",
+        quantity: 999
     },
      {
         id: 29,
@@ -264,7 +270,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 8.00,
         image: "/images/product2.jpg",
-        category: "Selenit"
+        category: "Selenit",
+        quantity: 999
     },
      {
         id: 30,
@@ -272,7 +279,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Selenit"
+        category: "Selenit",
+        quantity: 999
     },
      {
         id: 31,
@@ -280,7 +288,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 15.00,
         image: "/images/product2.jpg",
-        category: "Selenit"
+        category: "Selenit",
+        quantity: 999
     },
      {
         id: 32,
@@ -288,7 +297,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Selenit"
+        category: "Selenit",
+        quantity: 999
     },
      {
         id: 33,
@@ -296,7 +306,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Aquamarin"
+        category: "Aquamarin",
+        quantity: 999
     },
      {
         id: 34,
@@ -304,7 +315,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 6.00,
         image: "/images/product2.jpg",
-        category: "Aquamarin"
+        category: "Aquamarin",
+        quantity: 999
     },
      {
         id: 35,
@@ -312,7 +324,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 16.00,
         image: "/images/product2.jpg",
-        category: "Aquamarin"
+        category: "Aquamarin",
+        quantity: 999
     },
      {
         id: 36,
@@ -320,7 +333,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 20.00,
         image: "/images/product2.jpg",
-        category: "Aquamarin"
+        category: "Aquamarin",
+        quantity: 999
     },
      {
         id: 37,
@@ -328,7 +342,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Regenbogenfluorit"
+        category: "Regenbogenfluorit",
+        quantity: 999
     },
      {
         id: 38,
@@ -336,7 +351,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Regenbogenfluorit"
+        category: "Regenbogenfluorit",
+        quantity: 999
     },
      {
         id: 39,
@@ -344,7 +360,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Regenbogenfluorit"
+        category: "Regenbogenfluorit",
+        quantity: 999
     },
      {
         id: 40,
@@ -352,7 +369,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Grüner Fluorit"
+        category: "Grüner Fluorit",
+        quantity: 999
     },
      {
         id: 41,
@@ -360,7 +378,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Grüner Fluorit"
+        category: "Grüner Fluorit",
+        quantity: 999
     },
      {
         id: 42,
@@ -368,7 +387,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Aventurin"
+        category: "Aventurin",
+        quantity: 999
     },
      {
         id: 43,
@@ -376,7 +396,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Aventurin"
+        category: "Aventurin",
+        quantity: 999
     },
      {
         id: 44,
@@ -384,7 +405,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 16.00,
         image: "/images/product2.jpg",
-        category: "Aventurin"
+        category: "Aventurin",
+        quantity: 999
     },
      {
         id: 45,
@@ -392,7 +414,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Malachit"
+        category: "Malachit",
+        quantity: 999
     },
      {
         id: 46,
@@ -400,7 +423,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Malachit"
+        category: "Malachit",
+        quantity: 999
     },
      {
         id: 47,
@@ -408,7 +432,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Malachit"
+        category: "Malachit",
+        quantity: 999
     },
      {
         id: 48,
@@ -416,7 +441,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 20.00,
         image: "/images/product2.jpg",
-        category: "Malachit"
+        category: "Malachit",
+        quantity: 999
     },
      {
         id: 49,
@@ -424,7 +450,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Jaspis"
+        category: "Jaspis",
+        quantity: 999
     },
      {
         id: 50,
@@ -432,7 +459,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Jaspis"
+        category: "Jaspis",
+        quantity: 999
     },
      {
         id: 51,
@@ -440,7 +468,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Labradorit"
+        category: "Labradorit",
+        quantity: 999
     },
      {
         id: 52,
@@ -448,7 +477,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 40.00,
         image: "/images/product2.jpg",
-        category: "Labradorit"
+        category: "Labradorit",
+        quantity: 999
     },
      {
         id: 53,
@@ -456,7 +486,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Labradorit"
+        category: "Labradorit",
+        quantity: 999
     },
      {
         id: 54,
@@ -464,7 +495,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Labradorit"
+        category: "Labradorit",
+        quantity: 999
     },
      {
         id: 55,
@@ -472,7 +504,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 20.00,
         image: "/images/product2.jpg",
-        category: "Labradorit"
+        category: "Labradorit",
+        quantity: 999
     },
      {
         id: 56,
@@ -480,7 +513,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Rauchquarz"
+        category: "Rauchquarz",
+        quantity: 999
     },
      {
         id: 57,
@@ -488,7 +522,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Rauchquarz"
+        category: "Rauchquarz",
+        quantity: 999
     },
      {
         id: 58,
@@ -496,7 +531,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Rauchquarz"
+        category: "Rauchquarz",
+        quantity: 999
     },
      {
         id: 59,
@@ -504,7 +540,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Pyrit"
+        category: "Pyrit",
+        quantity: 999
     },
      {
         id: 60,
@@ -512,7 +549,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 6.00,
         image: "/images/product2.jpg",
-        category: "Pyrit"
+        category: "Pyrit",
+        quantity: 999
     },
      {
         id: 61,
@@ -520,7 +558,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Tigerauge"
+        category: "Tigerauge",
+        quantity: 999
     },
      {
         id: 62,
@@ -528,7 +567,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 6.00,
         image: "/images/product2.jpg",
-        category: "Tigerauge"
+        category: "Tigerauge",
+        quantity: 999
     },
      {
         id: 63,
@@ -536,7 +576,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 12.00,
         image: "/images/product2.jpg",
-        category: "Tigerauge"
+        category: "Tigerauge",
+        quantity: 999
     },
      {
         id: 64,
@@ -544,7 +585,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 8.00,
         image: "/images/product2.jpg",
-        category: "Schwarzer Turmalin"
+        category: "Schwarzer Turmalin",
+        quantity: 999
     },
      {
         id: 65,
@@ -552,7 +594,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 10.00,
         image: "/images/product2.jpg",
-        category: "Schwarzer Turmalin"
+        category: "Schwarzer Turmalin",
+        quantity: 999
     },
      {
         id: 66,
@@ -560,7 +603,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 25.00,
         image: "/images/product2.jpg",
-        category: "Schwarzer Turmalin"
+        category: "Schwarzer Turmalin",
+        quantity: 999
     },
     {
         id: 67,
@@ -568,7 +612,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 15.00,
         image: "/images/product2.jpg",
-        category: "Schwarzer Turmalin"
+        category: "Schwarzer Turmalin",
+        quantity: 999
     },
     {
         id: 68,
@@ -576,7 +621,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 15.00,
         image: "/images/product2.jpg",
-        category: "Achatscheibe mit Bergkristall"
+        category: "Achatscheibe mit Bergkristall",
+        quantity: 999
     },
     {
         id: 69,
@@ -584,7 +630,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 30.00,
         image: "/images/product2.jpg",
-        category: "Achatscheibe mit Bergkristall"
+        category: "Achatscheibe mit Bergkristall",
+        quantity: 999
     },
     {
         id: 70,
@@ -592,7 +639,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Achatscheibe mit Bergkristall"
+        category: "Achatscheibe mit Bergkristall",
+        quantity: 999
     },
     {
         id: 71,
@@ -600,7 +648,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 28.00,
         image: "/images/product2.jpg",
-        category: "Achatscheibe mit Bergkristall"
+        category: "Achatscheibe mit Bergkristall",
+        quantity: 999
     },
     {
         id: 72,
@@ -608,7 +657,8 @@ const shopData = [
         description:"Description for Product 2",
         price: 14.00,
         image: "/images/product2.jpg",
-        category: "Achatscheibe mit Bergkristall"
+        category: "Achatscheibe mit Bergkristall",
+        quantity: 999
     },
     
 ]

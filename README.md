@@ -21,6 +21,10 @@ A RESTful API backend for an e-commerce application built with Express.js and SQ
 
 ## Getting Started
 
+- stripe login
+- stripe listen --forward-to localhost:3000/api/payments/webhook
+- stripe trigger payment_intent.succeeded: Trigger events with the CLI
+
 ### Prerequisites
 
 - Node.js (v14 or higher)
