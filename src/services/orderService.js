@@ -1,4 +1,4 @@
-const { Order, OrderItem, Cart, CartItem, Product, User } = require('../models');
+const { Order, OrderItem, Product, User } = require('../models');
 const { ApiError } = require('../middleware/error');
 const { sequelize } = require('../config/database');
 
@@ -7,52 +7,49 @@ const { sequelize } = require('../config/database');
  * @param {Number} userId - User ID
  * @param {String} paymentIntentId - Stripe payment intent ID
  * @param {Object} shippingAddress - Shipping address
+ * @param {Array} items - Array of items with productId, quantity, and price
  * @returns {Object} Created order
  */
-const createOrder = async (userId, paymentIntentId, shippingAddress) => {
+const createOrder = async (userId, paymentIntentId, shippingAddress, items) => {
   const transaction = await sequelize.transaction();
   
   try {
-    // Get user's cart
-    const cart = await Cart.findOne({
-      where: { userId },
-      transaction
-    });
+    console.log('Starting order creation with transaction:', transaction.id);
     
-    if (!cart) {
+    if (!items || items.length === 0) {
       await transaction.rollback();
-      throw new ApiError('Cart not found', 404);
+      throw new ApiError('Items are required for order creation', 400);
     }
     
-    // Get cart items with product details
-    const cartItems = await CartItem.findAll({
-      where: { cartId: cart.id },
-      include: [
-        {
-          model: Product,
-          attributes: ['id', 'name', 'price', 'quantity']
-        }
-      ],
-      transaction
-    });
+    // Validate items and check stock
+    const validatedItems = [];
+    let totalAmount = 0;
     
-    if (cartItems.length === 0) {
-      await transaction.rollback();
-      throw new ApiError('Cart is empty', 400);
-    }
-    
-    // Check if all products are in stock
-    for (const item of cartItems) {
-      if (!item.Product.isInStock(item.quantity)) {
+    for (const item of items) {
+      // Get product details from database
+      const product = await Product.findByPk(item.productId, { transaction });
+      if (!product) {
         await transaction.rollback();
-        throw new ApiError(`Product "${item.Product.name}" is out of stock`, 400);
+        throw new ApiError(`Product with ID ${item.productId} not found`, 404);
       }
+      
+      // Check if product is in stock
+      if (!product.isInStock(item.quantity)) {
+        await transaction.rollback();
+        throw new ApiError(`Product "${product.name}" is out of stock`, 400);
+      }
+      
+      // Calculate item total
+      const itemTotal = product.price * item.quantity;
+      totalAmount += itemTotal;
+      
+      validatedItems.push({
+        productId: item.productId,
+        quantity: item.quantity,
+        price: product.price,
+        product
+      });
     }
-    
-    // Calculate total amount
-    const totalAmount = cartItems.reduce((total, item) => {
-      return total + (item.Product.price * item.quantity);
-    }, 0);
     
     // Create order
     const order = await Order.create({
@@ -63,31 +60,38 @@ const createOrder = async (userId, paymentIntentId, shippingAddress) => {
       shippingAddress
     }, { transaction });
     
-    // Create order items
+    // Create order items and update product quantities within transaction
     const orderItems = [];
-    for (const item of cartItems) {
-      const orderItem = await OrderItem.create({
-        orderId: order.id,
-        productId: item.productId,
-        quantity: item.quantity,
-        price: item.Product.price
-      }, { transaction });
-      
-      orderItems.push(orderItem);
-      
-      // Reduce product quantity
-      await item.Product.reduceQuantity(item.quantity, transaction);
+    for (const item of validatedItems) {
+      try {
+        const orderItem = await OrderItem.create({
+          orderId: order.id,
+          productId: item.productId,
+          quantity: item.quantity,
+          price: item.price
+        }, { transaction });
+        
+        orderItems.push(orderItem);
+
+        // Update product quantity within the same transaction
+        await Product.update(
+          { quantity: item.product.quantity - item.quantity },
+          { 
+            where: { id: item.productId },
+            transaction 
+          }
+        );
+      } catch (itemError) {
+        console.error('Error creating order item:', itemError);
+        await transaction.rollback();
+        throw new ApiError(`Failed to create order item: ${itemError.message}`, 500);
+      }
     }
     
-    // Clear cart
-    await CartItem.destroy({
-      where: { cartId: cart.id },
-      transaction
-    });
-    
     await transaction.commit();
+    console.log('Transaction committed successfully');
     
-    // Get the created order with items
+    // Get the created order with items (outside transaction)
     const createdOrder = await Order.findByPk(order.id, {
       include: [
         {
@@ -105,10 +109,14 @@ const createOrder = async (userId, paymentIntentId, shippingAddress) => {
         }
       ]
     });
-    
     return createdOrder;
   } catch (error) {
-    await transaction.rollback();
+    console.error('Error in createOrder:', error);
+    
+    // Only rollback if transaction is still active
+    if (transaction && !transaction.finished) {
+      await transaction.rollback();
+    }
     
     if (error instanceof ApiError) {
       throw error;

@@ -54,15 +54,16 @@ Product.prototype.isInStock = function(quantity = 1) {
 /**
  * Reduce product quantity
  * @param {Number} quantity - Quantity to reduce
+ * @param {Object} transaction - Optional transaction object
  * @returns {Promise} Promise that resolves when the product is updated
  */
-Product.prototype.reduceQuantity = async function(quantity = 1) {
+Product.prototype.reduceQuantity = async function(quantity = 1, transaction = null) {
   if (!this.isInStock(quantity)) {
     throw new Error('Product is out of stock');
   }
   
   this.quantity -= quantity;
-  return this.save();
+  return this.save({ transaction });
 };
 
 /**

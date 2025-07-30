@@ -2,6 +2,7 @@ const stripe = require('stripe');
 const { stripe: stripeConfig } = require('../config/auth');
 const { ApiError } = require('../middleware/error');
 const { Product } = require('../models');
+const orderService = require('./orderService');
 
 // Initialize Stripe with the secret key
 const stripeClient = stripe(stripeConfig.secretKey);
@@ -81,28 +82,41 @@ const handleWebhookEvent = async (event) => {
   try {
     switch (event.type) {
       case 'payment_intent.succeeded':
-        // Payment was successful
-        // This would typically trigger order creation, but we're handling that separately
+        // Payment was successful - create order
+        const paymentIntent = event.data.object;
+        const userId = parseInt(paymentIntent.metadata.userId);
+        const items = JSON.parse(paymentIntent.metadata.items);
+        
+        // Create shipping address from payment intent
+        const shippingAddress = {
+          street: paymentIntent.shipping?.address?.line1 || 'N/A',
+          city: paymentIntent.shipping?.address?.city || 'N/A',
+          state: paymentIntent.shipping?.address?.state || 'N/A',
+          zipCode: paymentIntent.shipping?.address?.postal_code || 'N/A',
+          country: paymentIntent.shipping?.address?.country || 'N/A'
+        };
+        
+        // Create order with items from webhook
+        await orderService.createOrder(userId, paymentIntent.id, shippingAddress, items);
+        console.log(`Order created for payment intent: ${paymentIntent.id}`);
         return { received: true };
         
       case 'payment_intent.payment_failed':
         // Payment failed
-        // You might want to notify the user or update the order status
+        console.log(`Payment failed for intent: ${event.data.object.id}`);
         return { received: true };
 
       case 'payment_intent.created':
         // Payment intent was created
-        // This would typically trigger order creation, but we're handling that separately
         return { received: true };
 
       case 'charge.succeeded':
         // Charge was successful
-        // This would typically trigger order creation, but we're handling that separately
         return { received: true };
 
       case 'charge.failed':   
         // Charge failed
-        // You might want to notify the user or update the order status
+        console.log(`Charge failed: ${event.data.object.id}`);
         return { received: false };
 
       default:
@@ -111,6 +125,7 @@ const handleWebhookEvent = async (event) => {
         return { received: true };
     }
   } catch (error) {
+    console.error('Webhook error:', error);
     throw new ApiError(error.message, 500);
   }
 };
