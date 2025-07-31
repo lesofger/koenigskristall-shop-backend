@@ -1,46 +1,48 @@
 const express = require('express');
-const { getUserCart, addItemToCart, updateCartItemQuantity, removeItemFromCart, clearCart } = require('../controllers/cartController');
+const { 
+  getCart, 
+  addToCart, 
+  updateCartItem, 
+  removeFromCart, 
+  clearCart 
+} = require('../controllers/cartController');
 const { authenticate } = require('../middleware/auth');
-const { cartItemValidation, validate } = require('../utils/validation');
 
 const router = express.Router();
-
-// All cart routes require authentication
-router.use(authenticate);
 
 /**
  * @route   GET /api/cart
  * @desc    Get user's cart
  * @access  Private
  */
-router.get('/', getUserCart);
+router.get('/', authenticate, getCart);
 
 /**
- * @route   POST /api/cart/items
+ * @route   POST /api/cart/add
  * @desc    Add item to cart
  * @access  Private
  */
-router.post('/items', cartItemValidation, validate, addItemToCart);
+router.post('/add', authenticate, addToCart);
 
 /**
- * @route   PUT /api/cart/items/:id
+ * @route   PUT /api/cart/:cartItemId
  * @desc    Update cart item quantity
  * @access  Private
  */
-router.put('/items/:id', updateCartItemQuantity);
+router.put('/:cartItemId', authenticate, updateCartItem);
 
 /**
- * @route   DELETE /api/cart/items/:id
+ * @route   DELETE /api/cart/:cartItemId
  * @desc    Remove item from cart
  * @access  Private
  */
-router.delete('/items/:id', removeItemFromCart);
+router.delete('/:cartItemId', authenticate, removeFromCart);
 
 /**
- * @route   DELETE /api/cart/clear
+ * @route   DELETE /api/cart
  * @desc    Clear cart
  * @access  Private
  */
-router.delete('/clear', clearCart);
+router.delete('/', authenticate, clearCart);
 
-module.exports = router;
+module.exports = router; 

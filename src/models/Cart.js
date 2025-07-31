@@ -10,10 +10,13 @@ const Cart = sequelize.define('Cart', {
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    unique: true
+    references: {
+      model: 'Users',
+      key: 'id'
+    }
   }
 }, {
   timestamps: true
 });
 
-module.exports = Cart;
+module.exports = Cart; 

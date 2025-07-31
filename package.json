@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "jest"
+    "test": "jest",
+    "import-products": "node scripts/importProducts.js",
+    "update-products": "node scripts/importProducts.js update",
+    "reset-products": "node scripts/importProducts.js reset",
+    "reset-db": "node scripts/resetDatabase.js"
   },
   "repository": {
     "type": "git",

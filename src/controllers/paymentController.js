@@ -1,6 +1,25 @@
 const paymentService = require('../services/paymentService');
 const { stripe: stripeConfig } = require('../config/auth');
 const { ApiError } = require('../middleware/error');
+const stripe = require('stripe')(stripeConfig.secretKey);
+
+/**
+ * Test authentication endpoint
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const testAuth = async (req, res, next) => {
+  try {
+    res.status(200).json({
+      status: 'success',
+      message: 'Authentication working',
+      user: req.user
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 /**
  * Create a payment intent for checkout
@@ -11,8 +30,14 @@ const { ApiError } = require('../middleware/error');
 const createPaymentIntent = async (req, res, next) => {
   try {
     const userId = req.user.id;
+    const { items } = req.body;
     
-    const paymentIntent = await paymentService.createPaymentIntent(userId);
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      throw new ApiError('Items are required for payment intent', 400);
+    }
+
+    
+    const paymentIntent = await paymentService.createPaymentIntent(userId, items);
     
     res.status(200).json({
       status: 'success',
@@ -41,7 +66,6 @@ const handleWebhook = async (req, res, next) => {
     
     try {
       // Verify the event came from Stripe
-      const stripe = require('stripe')(stripeConfig.secretKey);
       event = stripe.webhooks.constructEvent(
         req.body,
         sig,
@@ -61,6 +85,7 @@ const handleWebhook = async (req, res, next) => {
 };
 
 module.exports = {
+  testAuth,
   createPaymentIntent,
   handleWebhook
 };

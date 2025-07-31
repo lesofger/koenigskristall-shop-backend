@@ -9,11 +9,19 @@ const CartItem = sequelize.define('CartItem', {
   },
   cartId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'Carts',
+      key: 'id'
+    }
   },
   productId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'Products',
+      key: 'id'
+    }
   },
   quantity: {
     type: DataTypes.INTEGER,
@@ -24,14 +32,7 @@ const CartItem = sequelize.define('CartItem', {
     }
   }
 }, {
-  timestamps: true,
-  indexes: [
-    // Composite unique index to prevent duplicate products in cart
-    {
-      unique: true,
-      fields: ['cartId', 'productId']
-    }
-  ]
+  timestamps: true
 });
 
-module.exports = CartItem;
+module.exports = CartItem; 
