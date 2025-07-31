@@ -22,6 +22,7 @@ app.use(cors()); // Enable CORS
 app.use(morgan('dev')); // HTTP request logger
 
 // Raw body parsing for Stripe webhooks (must come before JSON parsing)
+app.use('/public', express.static(__dirname + '/public/images'));
 app.use('/api/payments/webhook', express.raw({ type: 'application/json' }));
 
 // JSON and URL-encoded body parsing for other routes
