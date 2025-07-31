@@ -39,7 +39,7 @@ app.use('/api/admin', adminRoutes);
 
 // Root route
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to the Koenigskristall Shop API test2' });
+  res.json({ message: 'Welcome to the Koenigskristall Shop API' });
 });
 
 // Import error handling middleware
