@@ -10,7 +10,7 @@ const shopData = [
         description:"Der Bergkristall fÃ¶rdert Klarheit in Gedanken und GefÃ¼hlen",
         price: 8.00,
         category: "Bergkristall",
-        image: "/images/BergkristallRoh.JPEG",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/BergkristallA.jpeg",
         quantity: 999
     },
     {
@@ -19,7 +19,7 @@ const shopData = [
         description:"Description for Product 2",
         price: 6.00,
         category: "Bergkristall",
-        image: "/images/BergkristallSpitze.JPEG",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/BergkristallRoh.jpeg",
         quantity: 999
     },
     {
@@ -28,7 +28,7 @@ const shopData = [
         description:"Description for Product 3",
         price: 10.00,
         category: "Bergkristall",
-        image: "/images/BergkristallTs.JPEG",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/BergkristallSpitze.jpeg",
         quantity: 999
     },
     {
@@ -37,7 +37,7 @@ const shopData = [
         description:"Description for Product 4",
         price: 25.00,
         category: "Bergkristall",
-        image: "/images/BergkristallTs.JPEG",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
      {
@@ -46,7 +46,7 @@ const shopData = [
         description:"Description for Product 5",
         price: 18.00,
         category: "Bergkristall",
-        image: "/images/product1.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/BergkristallTs.jpeg",
         quantity: 999
     },
     {
@@ -55,7 +55,7 @@ const shopData = [
         description:"Description for Product 6",
         price: 10.00,
         category: "Bergkristall",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/CitrinA.jpeg",
         quantity: 999
     },
      {
@@ -64,7 +64,7 @@ const shopData = [
         description:"Description for Product 7",
         price: 8.00,
         category: "Rosenquarz",
-        image: "/images/product1.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/CitrinRoh.jpeg",
         quantity: 999
     },
     {
@@ -73,7 +73,7 @@ const shopData = [
         description:"Description for Product 8",
         price: 6.00,
         category: "Rosenquarz",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/CitrinTs.jpeg",
         quantity: 999
     },
     {
@@ -82,7 +82,7 @@ const shopData = [
         description:"Description for Product 9",
         price: 22.00,
         category: "Rosenquarz",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzA.jpeg",
         quantity: 999
     },
     {
@@ -91,7 +91,7 @@ const shopData = [
         description:"Description for Product 10",
         price: 10.00,
         category: "Rosenquarz",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzRoh.jpeg",
         quantity: 999
     },
     {
@@ -100,7 +100,7 @@ const shopData = [
         description:"Description for Product 11",
         price: 20.00,
         category: "Rosenquarz",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -109,7 +109,7 @@ const shopData = [
         description:"Description for Product 12",
         price: 7.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -118,7 +118,7 @@ const shopData = [
         description:"Description for Product 13",
         price: 10.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -127,7 +127,7 @@ const shopData = [
         description:"Description for Product 14",
         price: 15.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },{
         id: 15,
@@ -135,7 +135,7 @@ const shopData = [
         description:"Description for Product 15",
         price: 16.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -144,7 +144,7 @@ const shopData = [
         description:"Description for Product 16",
         price: 15.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -153,7 +153,7 @@ const shopData = [
         description:"Description for Product 17",
         price: 20.00,
         category: "Amethyst",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -162,7 +162,7 @@ const shopData = [
         description:"Description for Product 18",
         price: 10.00,
         category: "Citrin",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -171,7 +171,7 @@ const shopData = [
         description:"Description for Product 19",
         price: 14.00,
         category: "Citrin",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -180,7 +180,7 @@ const shopData = [
         description:"Description for Product 20",
         price: 16.00,
         category: "Citrin",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -189,7 +189,7 @@ const shopData = [
         description:"Description for Product 21",
         price: 20.00,
         category: "Citrin",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -198,7 +198,7 @@ const shopData = [
         description:"Description for Product 22",
         price: 10.00,
         category: "Orangencalcit",
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         quantity: 999
     },
     {
@@ -206,7 +206,7 @@ const shopData = [
         name: "Orangencalcit Rohstein",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Orangencalcit",
         quantity: 999
     },
@@ -215,7 +215,7 @@ const shopData = [
         name: "Karneol Trommelstein",
         description:"Description for Product 2",
         price: 8.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Karneol",
         quantity: 999
     },
@@ -224,7 +224,7 @@ const shopData = [
         name: "Karneol Rohstein",
         description:"Description for Product 2",
         price: 8.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Karneol",
         quantity: 999
     },
@@ -233,7 +233,7 @@ const shopData = [
         name: "Karneol Armband",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Karneol",
         quantity: 999
     },
@@ -242,7 +242,7 @@ const shopData = [
         name: "Mondstein Trommelstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Mondstein",
         quantity: 999
     },
@@ -251,7 +251,7 @@ const shopData = [
         name: "Mondstein Rohstein",
         description:"Description for Product 2",
         price: 8.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Mondstein",
         quantity: 999
     },
@@ -260,7 +260,7 @@ const shopData = [
         name: "Mondstein Armband",
         description:"Description for Product 2",
         price: 16.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Mondstein",
         quantity: 999
     },
@@ -269,7 +269,7 @@ const shopData = [
         name: "Selenit Trommelstein",
         description:"Description for Product 2",
         price: 8.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Selenit",
         quantity: 999
     },
@@ -278,7 +278,7 @@ const shopData = [
         name: "Selenit Rohstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Selenit",
         quantity: 999
     },
@@ -287,7 +287,7 @@ const shopData = [
         name: "Selenit Kugel",
         description:"Description for Product 2",
         price: 15.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Selenit",
         quantity: 999
     },
@@ -296,7 +296,7 @@ const shopData = [
         name: "Selenit Stab",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Selenit",
         quantity: 999
     },
@@ -305,7 +305,7 @@ const shopData = [
         name: "Aquamarin Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aquamarin",
         quantity: 999
     },
@@ -314,7 +314,7 @@ const shopData = [
         name: "Aquamarin Rohstein",
         description:"Description for Product 2",
         price: 6.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aquamarin",
         quantity: 999
     },
@@ -323,7 +323,7 @@ const shopData = [
         name: "Aquamarin Armband",
         description:"Description for Product 2",
         price: 16.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aquamarin",
         quantity: 999
     },
@@ -332,7 +332,7 @@ const shopData = [
         name: "Aquamarin Halskette",
         description:"Description for Product 2",
         price: 20.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aquamarin",
         quantity: 999
     },
@@ -341,7 +341,7 @@ const shopData = [
         name: "Regenbogenfluorit Trommelstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Regenbogenfluorit",
         quantity: 999
     },
@@ -350,7 +350,7 @@ const shopData = [
         name: "Regenbogenfluorit Rohstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Regenbogenfluorit",
         quantity: 999
     },
@@ -359,7 +359,7 @@ const shopData = [
         name: "Regenbogenfluorit Armband",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Regenbogenfluorit",
         quantity: 999
     },
@@ -368,7 +368,7 @@ const shopData = [
         name: "Grüner Fluorit Trommelstein",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Grüner Fluorit",
         quantity: 999
     },
@@ -377,7 +377,7 @@ const shopData = [
         name: "Grüner Fluorit Rohstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Grüner Fluorit",
         quantity: 999
     },
@@ -386,7 +386,7 @@ const shopData = [
         name: "Aventurin Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aventurin",
         quantity: 999
     },
@@ -395,7 +395,7 @@ const shopData = [
         name: "Aventurin Rohstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aventurin",
         quantity: 999
     },
@@ -404,7 +404,7 @@ const shopData = [
         name: "Aventurin Armband",
         description:"Description for Product 2",
         price: 16.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Aventurin",
         quantity: 999
     },
@@ -413,7 +413,7 @@ const shopData = [
         name: "Malachit Trommelstein",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Malachit",
         quantity: 999
     },
@@ -422,7 +422,7 @@ const shopData = [
         name: "Malachit Rohstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Malachit",
         quantity: 999
     },
@@ -431,7 +431,7 @@ const shopData = [
         name: "Malachit Armband",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Malachit",
         quantity: 999
     },
@@ -440,7 +440,7 @@ const shopData = [
         name: "Malachit Halskette",
         description:"Description for Product 2",
         price: 20.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Malachit",
         quantity: 999
     },
@@ -449,7 +449,7 @@ const shopData = [
         name: "Roter Jaspis Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Jaspis",
         quantity: 999
     },
@@ -458,7 +458,7 @@ const shopData = [
         name: "Algen Jaspis Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Jaspis",
         quantity: 999
     },
@@ -467,7 +467,7 @@ const shopData = [
         name: "Labradorit Trommelstein / Klein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Labradorit",
         quantity: 999
     },
@@ -476,7 +476,7 @@ const shopData = [
         name: "Labradorit Trommelstein / Groß",
         description:"Description for Product 2",
         price: 40.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Labradorit",
         quantity: 999
     },
@@ -485,7 +485,7 @@ const shopData = [
         name: "Labradorit Rohstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Labradorit",
         quantity: 999
     },
@@ -494,7 +494,7 @@ const shopData = [
         name: "Labradorit Armband",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Labradorit",
         quantity: 999
     },
@@ -503,7 +503,7 @@ const shopData = [
         name: "Labradorit Halskette ",
         description:"Description for Product 2",
         price: 20.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Labradorit",
         quantity: 999
     },
@@ -512,7 +512,7 @@ const shopData = [
         name: "Rauchquarz Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Rauchquarz",
         quantity: 999
     },
@@ -521,7 +521,7 @@ const shopData = [
         name: "Rauchquarz Rohstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Rauchquarz",
         quantity: 999
     },
@@ -530,7 +530,7 @@ const shopData = [
         name: "Rauchquarz Armband",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Rauchquarz",
         quantity: 999
     },
@@ -539,7 +539,7 @@ const shopData = [
         name: "Pyrit Trommelstein",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Pyrit",
         quantity: 999
     },
@@ -548,7 +548,7 @@ const shopData = [
         name: "Pyrit Rohstein",
         description:"Description for Product 2",
         price: 6.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Pyrit",
         quantity: 999
     },
@@ -557,7 +557,7 @@ const shopData = [
         name: "Tigerauge Trommelstein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Tigerauge",
         quantity: 999
     },
@@ -566,7 +566,7 @@ const shopData = [
         name: "Tigerauge Rohstein",
         description:"Description for Product 2",
         price: 6.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Tigerauge",
         quantity: 999
     },
@@ -575,7 +575,7 @@ const shopData = [
         name: "Tigerauge Armband",
         description:"Description for Product 2",
         price: 12.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Tigerauge",
         quantity: 999
     },
@@ -584,7 +584,7 @@ const shopData = [
         name: "Schwarzer Turmalin Trommelstein",
         description:"Description for Product 2",
         price: 8.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Schwarzer Turmalin",
         quantity: 999
     },
@@ -593,7 +593,7 @@ const shopData = [
         name: "Schwarzer Turmalin Rohstein / Klein",
         description:"Description for Product 2",
         price: 10.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Schwarzer Turmalin",
         quantity: 999
     },
@@ -602,7 +602,7 @@ const shopData = [
         name: "Schwarzer Turmalin / Groß",
         description:"Description for Product 2",
         price: 25.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Schwarzer Turmalin",
         quantity: 999
     },
@@ -611,7 +611,7 @@ const shopData = [
         name: "Schwarzer Turmalin Armband",
         description:"Description for Product 2",
         price: 15.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Schwarzer Turmalin",
         quantity: 999
     },
@@ -620,7 +620,7 @@ const shopData = [
         name: "Achatscheibe  mit Bergkristall Blau / Klein",
         description:"Description for Product 2",
         price: 15.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 999
     },
@@ -629,7 +629,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Blau / Groß",
         description:"Description for Product 2",
         price: 30.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 999
     },
@@ -638,7 +638,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Pink / Klein",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 999
     },
@@ -647,7 +647,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Pink / Groß",
         description:"Description for Product 2",
         price: 28.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 999
     },
@@ -656,11 +656,10 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Grün / Klein",
         description:"Description for Product 2",
         price: 14.00,
-        image: "/images/product2.jpg",
+        image: "http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/public/RosenquarzTs.jpeg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 999
-    },
-    
+    }
 ]
 
 export default shopData;
