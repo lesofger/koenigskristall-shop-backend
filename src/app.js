@@ -16,10 +16,28 @@ const adminRoutes = require('./routes/admin');
 // Create Express app
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:8080',
+    'https://koenigskristall-shop.vercel.app',
+    'https://koenigskristall-shop.vercel.app/'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+
 // Apply middleware
 app.use(helmet()); // Security headers
-app.use(cors()); // Enable CORS
+app.use(cors(corsOptions)); // Enable CORS with specific origins
 app.use(morgan('dev')); // HTTP request logger
+
+// Cross-Origin-Resource-Policy middleware for image embedding
+app.use((req, res, next) => {
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+});
 
 // Raw body parsing for Stripe webhooks (must come before JSON parsing)
 app.use('/public', express.static(__dirname + '/public/images'));
