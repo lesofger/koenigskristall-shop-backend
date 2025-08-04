@@ -11,9 +11,10 @@ const stripeClient = stripe(stripeConfig.secretKey);
  * Create a payment intent for checkout
  * @param {Number} userId - User ID
  * @param {Array} items - Array of items with id, quantity, and price
+ * @param {String} paymentMethod - Payment method ('card' or 'bank_transfer')
  * @returns {Object} Payment intent
  */
-const createPaymentIntent = async (userId, items) => {
+const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
   try {
     if (!items || items.length === 0) {
       throw new ApiError('Items are required for payment intent', 400);
@@ -45,9 +46,9 @@ const createPaymentIntent = async (userId, items) => {
         itemTotal
       });
     }
-    
-    // Create a payment intent
-    const paymentIntent = await stripeClient.paymentIntents.create({
+
+    // Create payment intent with different configurations based on payment method
+    const paymentIntentData = {
       amount: Math.round(totalAmount * 100), // Convert to cents
       currency: 'eur', // Changed to EUR for German shop
       metadata: {
@@ -58,12 +59,27 @@ const createPaymentIntent = async (userId, items) => {
           price: item.product.price
         })))
       }
-    });
+    };
+
+    // Add payment method specific configurations
+    switch (paymentMethod) {
+
+      case 'bank_transfer':
+        paymentIntentData.payment_method_types = ['sepa_debit'];
+        break;
+
+      default:
+        paymentIntentData.payment_method_types = ['card'];
+        break;
+    }
+    
+    const paymentIntent = await stripeClient.paymentIntents.create(paymentIntentData);
     
     return {
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
-      amount: totalAmount
+      amount: totalAmount,
+      paymentMethod: paymentMethod
     };
   } catch (error) {
     if (error instanceof ApiError) {
@@ -80,7 +96,14 @@ const createPaymentIntent = async (userId, items) => {
  */
 const handleWebhookEvent = async (event) => {
   try {
-    console.log(`Processing webhook event: ${event.type}`);
+    const paymentIntent = event.data.object; // The PaymentIntent object
+    const paymentMethodId = paymentIntent.payment_method; // ID of the payment method
+    console.log('paymentIntent==========>', paymentIntent);
+    // Retrieve the payment method details using Stripe's API
+    console.log('paymentMethodId==========>', paymentMethodId);
+    const paymentMethod = await stripeClient.paymentMethods.retrieve(paymentMethodId);
+    console.log('paymentMethod==========>', paymentMethod);
+    console.log(`Processing webhook event: ${event.type} for payment method: ${paymentMethod?.type || 'unknown'}`);
     
     switch (event.type) {
       case 'payment_intent.succeeded':
@@ -97,6 +120,14 @@ const handleWebhookEvent = async (event) => {
         
       case 'charge.failed':
         return await handleChargeFailed(event);
+        
+      case 'payment_method.attached':
+        console.log(`Payment method attached: ${paymentMethodId}`);
+        return { received: true };
+        
+      case 'payment_method.detached':
+        console.log(`Payment method detached: ${paymentMethodId}`);
+        return { received: true };
         
       default:
         return await handleUnhandledEvent(event);
