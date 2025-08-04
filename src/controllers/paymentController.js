@@ -30,14 +30,13 @@ const testAuth = async (req, res, next) => {
 const createPaymentIntent = async (req, res, next) => {
   try {
     const userId = req.user.id;
-    const { items } = req.body;
+    const { items, paymentMethod = 'card' } = req.body;
     
     if (!items || !Array.isArray(items) || items.length === 0) {
       throw new ApiError('Items are required for payment intent', 400);
     }
 
-    
-    const paymentIntent = await paymentService.createPaymentIntent(userId, items);
+    const paymentIntent = await paymentService.createPaymentIntent(userId, items, paymentMethod);
     
     res.status(200).json({
       status: 'success',

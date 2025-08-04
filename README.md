@@ -25,6 +25,12 @@ A RESTful API backend for an e-commerce application built with Express.js and SQ
 - stripe listen --forward-to localhost:3000/api/payments/webhook
 - stripe trigger payment_intent.succeeded: Trigger events with the CLI
 4000 0025 0000 3155
+DE89370400440532013000 // SEPA
+"DE89370400440532013000", // Commerzbank (sofort)
+"DE89370400440532013001", // Deutsche Bank
+"DE89370400440532013002", // Sparkasse
+"DE89370400440532013003", // Volksbank
+"DE89370400440532013004"  // Postbank
 
 ### Prerequisites
 

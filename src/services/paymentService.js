@@ -11,9 +11,10 @@ const stripeClient = stripe(stripeConfig.secretKey);
  * Create a payment intent for checkout
  * @param {Number} userId - User ID
  * @param {Array} items - Array of items with id, quantity, and price
+ * @param {String} paymentMethod - Payment method ('card' or 'bank_transfer')
  * @returns {Object} Payment intent
  */
-const createPaymentIntent = async (userId, items) => {
+const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
   try {
     if (!items || items.length === 0) {
       throw new ApiError('Items are required for payment intent', 400);
@@ -45,9 +46,12 @@ const createPaymentIntent = async (userId, items) => {
         itemTotal
       });
     }
+
+    console.log('validatedItems==========>', validatedItems);
+    console.log('paymentMethod==========>', paymentMethod);
     
-    // Create a payment intent
-    const paymentIntent = await stripeClient.paymentIntents.create({
+    // Create payment intent with different configurations based on payment method
+    const paymentIntentData = {
       amount: Math.round(totalAmount * 100), // Convert to cents
       currency: 'eur', // Changed to EUR for German shop
       metadata: {
@@ -58,12 +62,37 @@ const createPaymentIntent = async (userId, items) => {
           price: item.product.price
         })))
       }
-    });
+    };
+
+    // Add payment method specific configurations
+    if (paymentMethod === 'bank_transfer') {
+      paymentIntentData.payment_method_types = ['sofort', 'sepa_debit'];
+      // paymentIntentData.payment_method_data = {
+      //   type: 'customer_balance',
+      //   billing_details: {
+      //     name: 'Bank Transfer Payment'
+      //   }
+      // };
+      // paymentIntentData.payment_method_options = {
+      //   customer_balance: {
+      //     funding_type: 'bank_transfer',
+      //     bank_transfer: {
+      //       type: 'eu_bank_transfer'
+      //     }
+      //   }
+      // };
+    } else {
+      // Default card payment
+      paymentIntentData.payment_method_types = ['card'];
+    }
+    
+    const paymentIntent = await stripeClient.paymentIntents.create(paymentIntentData);
     
     return {
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
-      amount: totalAmount
+      amount: totalAmount,
+      paymentMethod: paymentMethod
     };
   } catch (error) {
     if (error instanceof ApiError) {
@@ -80,6 +109,13 @@ const createPaymentIntent = async (userId, items) => {
  */
 const handleWebhookEvent = async (event) => {
   try {
+    const paymentIntent = event.data.object; // The PaymentIntent object
+    const paymentMethodId = paymentIntent.payment_method; // ID of the payment method
+    console.log('paymentIntent==========>', paymentIntent);
+    // Retrieve the payment method details using Stripe's API
+    console.log('paymentMethodId==========>', paymentMethodId);
+    const paymentMethod = await stripeClient.paymentMethods.retrieve(paymentMethodId);
+    console.log('paymentMethod==========>', paymentMethod);
     console.log(`Processing webhook event: ${event.type}`);
     
     switch (event.type) {
