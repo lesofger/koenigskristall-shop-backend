@@ -47,9 +47,6 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
       });
     }
 
-    console.log('validatedItems==========>', validatedItems);
-    console.log('paymentMethod==========>', paymentMethod);
-    
     // Create payment intent with different configurations based on payment method
     const paymentIntentData = {
       amount: Math.round(totalAmount * 100), // Convert to cents
@@ -65,25 +62,15 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
     };
 
     // Add payment method specific configurations
-    if (paymentMethod === 'bank_transfer') {
-      paymentIntentData.payment_method_types = ['sofort', 'sepa_debit'];
-      // paymentIntentData.payment_method_data = {
-      //   type: 'customer_balance',
-      //   billing_details: {
-      //     name: 'Bank Transfer Payment'
-      //   }
-      // };
-      // paymentIntentData.payment_method_options = {
-      //   customer_balance: {
-      //     funding_type: 'bank_transfer',
-      //     bank_transfer: {
-      //       type: 'eu_bank_transfer'
-      //     }
-      //   }
-      // };
-    } else {
-      // Default card payment
-      paymentIntentData.payment_method_types = ['card'];
+    switch (paymentMethod) {
+
+      case 'bank_transfer':
+        paymentIntentData.payment_method_types = ['sepa_debit'];
+        break;
+
+      default:
+        paymentIntentData.payment_method_types = ['card'];
+        break;
     }
     
     const paymentIntent = await stripeClient.paymentIntents.create(paymentIntentData);
@@ -116,7 +103,7 @@ const handleWebhookEvent = async (event) => {
     console.log('paymentMethodId==========>', paymentMethodId);
     const paymentMethod = await stripeClient.paymentMethods.retrieve(paymentMethodId);
     console.log('paymentMethod==========>', paymentMethod);
-    console.log(`Processing webhook event: ${event.type}`);
+    console.log(`Processing webhook event: ${event.type} for payment method: ${paymentMethod?.type || 'unknown'}`);
     
     switch (event.type) {
       case 'payment_intent.succeeded':
@@ -133,6 +120,14 @@ const handleWebhookEvent = async (event) => {
         
       case 'charge.failed':
         return await handleChargeFailed(event);
+        
+      case 'payment_method.attached':
+        console.log(`Payment method attached: ${paymentMethodId}`);
+        return { received: true };
+        
+      case 'payment_method.detached':
+        console.log(`Payment method detached: ${paymentMethodId}`);
+        return { received: true };
         
       default:
         return await handleUnhandledEvent(event);
