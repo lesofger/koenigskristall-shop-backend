@@ -1,5 +1,5 @@
 const express = require('express');
-const { testAuth, createPaymentIntent, createBankTransferPaymentIntent, handleWebhook } = require('../controllers/paymentController');
+const { testAuth, createPaymentIntent, handleWebhook } = require('../controllers/paymentController');
 const { authenticate } = require('../middleware/auth');
 
 const router = express.Router();
