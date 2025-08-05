@@ -138,8 +138,13 @@ const getUserOrders = async (userId, query = {}) => {
     // Calculate pagination
     const offset = (page - 1) * limit;
     
-    // Get user's orders
-    const { count, rows: orders } = await Order.findAndCountAll({
+    // Get total count of orders (not order items)
+    const totalCount = await Order.count({
+      where: { userId }
+    });
+    
+    // Get user's orders with items
+    const orders = await Order.findAll({
       where: { userId },
       include: [
         {
@@ -158,12 +163,12 @@ const getUserOrders = async (userId, query = {}) => {
     });
     
     // Calculate total pages
-    const totalPages = Math.ceil(count / limit);
+    const totalPages = Math.ceil(totalCount / limit);
     
     return {
       orders,
       pagination: {
-        total: count,
+        total: totalCount,
         page: parseInt(page),
         limit: parseInt(limit),
         totalPages
@@ -234,8 +239,13 @@ const getAllOrders = async (query = {}) => {
     // Calculate pagination
     const offset = (page - 1) * limit;
     
-    // Get all orders
-    const { count, rows: orders } = await Order.findAndCountAll({
+    // Get total count of orders (not order items)
+    const totalCount = await Order.count({
+      where: whereConditions
+    });
+    
+    // Get all orders with items
+    const orders = await Order.findAll({
       where: whereConditions,
       include: [
         {
@@ -258,12 +268,12 @@ const getAllOrders = async (query = {}) => {
     });
     
     // Calculate total pages
-    const totalPages = Math.ceil(count / limit);
+    const totalPages = Math.ceil(totalCount / limit);
     
     return {
       orders,
       pagination: {
-        total: count,
+        total: totalCount,
         page: parseInt(page),
         limit: parseInt(limit),
         totalPages
