@@ -4,24 +4,6 @@ const { ApiError } = require('../middleware/error');
 const stripe = require('stripe')(stripeConfig.secretKey);
 
 /**
- * Test authentication endpoint
- * @param {Object} req - Express request object
- * @param {Object} res - Express response object
- * @param {Function} next - Express next function
- */
-const testAuth = async (req, res, next) => {
-  try {
-    res.status(200).json({
-      status: 'success',
-      message: 'Authentication working',
-      user: req.user
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
-/**
  * Create a payment intent for checkout
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
@@ -41,6 +23,83 @@ const createPaymentIntent = async (req, res, next) => {
     res.status(200).json({
       status: 'success',
       data: paymentIntent
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Create a PayPal order
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const createPayPalOrder = async (req, res, next) => {
+  try {
+    const userId = req.user.id;
+    const { items, shippingAddress } = req.body;
+    
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      throw new ApiError('Items are required for PayPal order', 400);
+    }
+
+    const paypalOrder = await paymentService.createPayPalOrder(userId, items, shippingAddress);
+    
+    res.status(200).json({
+      status: 'success',
+      data: paypalOrder
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Capture PayPal payment
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const capturePayPalPayment = async (req, res, next) => {
+  try {
+    const userId = req.user.id;
+    const { orderID, shippingAddress } = req.body;
+    
+    if (!orderID) {
+      throw new ApiError('PayPal order ID is required', 400);
+    }
+
+    const captureResult = await paymentService.capturePayPalPayment(userId, orderID, shippingAddress);
+    
+    res.status(200).json({
+      status: 'success',
+      data: captureResult
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Get PayPal order details
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const getPayPalOrderDetails = async (req, res, next) => {
+  try {
+    const { orderID } = req.params;
+    
+    if (!orderID) {
+      throw new ApiError('PayPal order ID is required', 400);
+    }
+
+    const orderDetails = await paymentService.getPayPalOrderDetails(orderID);
+    
+    res.status(200).json({
+      status: 'success',
+      data: orderDetails
     });
   } catch (error) {
     next(error);
@@ -84,7 +143,9 @@ const handleWebhook = async (req, res, next) => {
 };
 
 module.exports = {
-  testAuth,
   createPaymentIntent,
-  handleWebhook
+  createPayPalOrder,
+  capturePayPalPayment,
+  getPayPalOrderDetails,
+  handleWebhook,
 };

@@ -9,7 +9,7 @@ const { Op } = require('sequelize');
  */
 const getAllProducts = async (query = {}) => {
   try {
-    const { category, search, limit = 10, page = 1 } = query;
+    const { category, search, limit = 10, page = 1, sortBy = 'createdAt', sortOrder = 'desc' } = query;
     
     // Build filter conditions
     const whereConditions = {};
@@ -30,12 +30,31 @@ const getAllProducts = async (query = {}) => {
     // Calculate pagination
     const offset = (page - 1) * limit;
     
+    // Validate and set sort parameters
+    let orderColumn = 'createdAt';
+    let orderDirection = 'DESC';
+    
+    // Map sortBy to actual column names
+    switch (sortBy) {
+      case 'price':
+        orderColumn = 'price';
+        break;
+      case 'date':
+        orderColumn = 'createdAt';
+        break;
+      default:
+        orderColumn = 'createdAt';
+    }
+    
+    // Set sort order
+    orderDirection = sortOrder.toLowerCase() === 'asc' ? 'ASC' : 'DESC';
+    
     // Get products
     const { count, rows: products } = await Product.findAndCountAll({
       where: whereConditions,
       limit: parseInt(limit),
       offset: parseInt(offset),
-      order: [['createdAt', 'DESC']]
+      order: [[orderColumn, orderDirection]]
     });
     
     // Calculate total pages
@@ -85,17 +104,36 @@ const getProductById = async (id) => {
  */
 const getProductsByCategory = async (category, query = {}) => {
   try {
-    const { limit = 10, page = 1 } = query;
+    const { limit = 10, page = 1, sortBy = 'createdAt', sortOrder = 'desc' } = query;
     
     // Calculate pagination
     const offset = (page - 1) * limit;
+    
+    // Validate and set sort parameters
+    let orderColumn = 'createdAt';
+    let orderDirection = 'DESC';
+    
+    // Map sortBy to actual column names
+    switch (sortBy) {
+      case 'price':
+        orderColumn = 'price';
+        break;
+      case 'date':
+        orderColumn = 'createdAt';
+        break;
+      default:
+        orderColumn = 'createdAt';
+    }
+    
+    // Set sort order
+    orderDirection = sortOrder.toLowerCase() === 'asc' ? 'ASC' : 'DESC';
     
     // Get products by category
     const { count, rows: products } = await Product.findAndCountAll({
       where: { category },
       limit: parseInt(limit),
       offset: parseInt(offset),
-      order: [['createdAt', 'DESC']]
+      order: [[orderColumn, orderDirection]]
     });
     
     // Calculate total pages
