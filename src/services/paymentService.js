@@ -16,9 +16,10 @@ const paypal = require('@paypal/checkout-server-sdk');
  * @param {Number} userId - User ID
  * @param {Array} items - Array of items with id, quantity, and price
  * @param {String} paymentMethod - Payment method ('card' or 'bank_transfer')
+ * @param {Object} shippingAddress - Shipping address object
  * @returns {Object} Payment intent
  */
-const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
+const createPaymentIntent = async (userId, items, paymentMethod = 'card', shippingAddress = null) => {
   try {
     if (!items || items.length === 0) {
       throw new ApiError('Items are required for payment intent', 400);
@@ -65,6 +66,19 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
       }
     };
 
+    // Add shipping address if provided
+    if (shippingAddress) {
+      paymentIntentData.shipping = {
+        name: 'Ich bin Maja',
+        address: {
+          line1: shippingAddress.street,
+          city: shippingAddress.city,
+          state: shippingAddress.state,
+          postal_code: shippingAddress.zipCode,
+          country: shippingAddress.country || 'DE'
+        }
+      };
+    }
     // Add payment method specific configurations
     switch (paymentMethod) {
 
@@ -83,7 +97,8 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card') => {
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
       amount: totalAmount,
-      paymentMethod: paymentMethod
+      paymentMethod: paymentMethod,
+      shippingAddress: shippingAddress
     };
   } catch (error) {
     if (error instanceof ApiError) {
@@ -443,8 +458,10 @@ const handlePaymentIntentSucceeded = async (event) => {
     city: paymentIntent.shipping?.address?.city || 'N/A',
     state: paymentIntent.shipping?.address?.state || 'N/A',
     zipCode: paymentIntent.shipping?.address?.postal_code || 'N/A',
-    country: paymentIntent.shipping?.address?.country || 'N/A'
+    country: paymentIntent.shipping?.address?.country || 'DE'
   };
+  
+  console.log('Shipping address from payment intent:', shippingAddress);
   
   // Create order with items from webhook
   await orderService.createOrder(userId, paymentIntent.id, shippingAddress, items);
