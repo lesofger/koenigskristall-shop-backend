@@ -21,7 +21,7 @@ const corsOptions = {
   origin: [
     'http://localhost:8080',
     'https://koenigskristall-shop.vercel.app',
-    'https://koenigskristall-shop.vercel.app/',
+    'https://www.koenigskristall.de'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
