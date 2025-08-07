@@ -12,13 +12,13 @@ const stripe = require('stripe')(stripeConfig.secretKey);
 const createPaymentIntent = async (req, res, next) => {
   try {
     const userId = req.user.id;
-    const { items, paymentMethod = 'card' } = req.body;
+    const { items, paymentMethod = 'card', shippingAddress = null } = req.body;
     
     if (!items || !Array.isArray(items) || items.length === 0) {
       throw new ApiError('Items are required for payment intent', 400);
     }
 
-    const paymentIntent = await paymentService.createPaymentIntent(userId, items, paymentMethod);
+    const paymentIntent = await paymentService.createPaymentIntent(userId, items, paymentMethod, shippingAddress);
     
     res.status(200).json({
       status: 'success',
