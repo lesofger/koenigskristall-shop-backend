@@ -1,5 +1,5 @@
 const express = require('express');
-const { createOrder, getUserOrders, getOrderById } = require('../controllers/orderController');
+const { createOrder, getUserOrders, getOrderById, updateUserOrderStatus } = require('../controllers/orderController');
 const { authenticate } = require('../middleware/auth');
 const { orderValidation, validate } = require('../utils/validation');
 
@@ -28,5 +28,12 @@ router.get('/', getUserOrders);
  * @access  Private
  */
 router.get('/:id', getOrderById);
+
+/**
+ * @route   PUT /api/orders/:id/status
+ * @desc    Update user's own order status
+ * @access  Private
+ */
+router.put('/:id/status', updateUserOrderStatus);
 
 module.exports = router;
