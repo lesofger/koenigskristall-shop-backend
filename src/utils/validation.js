@@ -98,11 +98,110 @@ const productQuantityValidation = [
     .withMessage('Quantity must be a non-negative integer')
 ];
 
+/**
+ * User creation validation rules
+ */
+const createUserValidation = [
+  body('email')
+    .isEmail()
+    .withMessage('Please provide a valid email address')
+    .normalizeEmail(),
+  body('password')
+    .isLength({ min: 6 })
+    .withMessage('Password must be at least 6 characters long'),
+  body('firstName')
+    .notEmpty()
+    .withMessage('First name is required')
+    .trim(),
+  body('lastName')
+    .notEmpty()
+    .withMessage('Last name is required')
+    .trim(),
+  body('role')
+    .optional()
+    .isIn(['customer', 'admin'])
+    .withMessage('Role must be either "customer" or "admin"')
+];
+
+/**
+ * User update validation rules
+ */
+const updateUserValidation = [
+  body('email')
+    .optional()
+    .isEmail()
+    .withMessage('Please provide a valid email address')
+    .normalizeEmail(),
+  body('firstName')
+    .optional()
+    .notEmpty()
+    .withMessage('First name cannot be empty')
+    .trim(),
+  body('lastName')
+    .optional()
+    .notEmpty()
+    .withMessage('Last name cannot be empty')
+    .trim(),
+  body('role')
+    .optional()
+    .isIn(['customer', 'admin'])
+    .withMessage('Role must be either "customer" or "admin"')
+];
+
+/**
+ * User password update validation rules
+ */
+const updatePasswordValidation = [
+  body('password')
+    .isLength({ min: 6 })
+    .withMessage('Password must be at least 6 characters long')
+];
+
+/**
+ * User ID parameter validation
+ */
+const userIdValidation = [
+  param('id')
+    .isInt({ min: 1 })
+    .withMessage('User ID must be a positive integer')
+];
+
+/**
+ * User query parameters validation
+ */
+const userQueryValidation = [
+  query('page')
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage('Page must be a positive integer'),
+  query('limit')
+    .optional()
+    .isInt({ min: 1, max: 100 })
+    .withMessage('Limit must be between 1 and 100'),
+  query('role')
+    .optional()
+    .isIn(['customer', 'admin'])
+    .withMessage('Role filter must be either "customer" or "admin"'),
+  query('sortBy')
+    .optional()
+    .isIn(['id', 'email', 'firstName', 'lastName', 'role', 'createdAt', 'updatedAt'])
+    .withMessage('Invalid sort field'),
+  query('sortOrder')
+    .optional()
+    .isIn(['ASC', 'DESC'])
+    .withMessage('Sort order must be either "ASC" or "DESC"')
+];
+
 module.exports = {
   validate,
   registerValidation,
   loginValidation,
   orderValidation,
   orderStatusValidation,
-  productQuantityValidation
+  productQuantityValidation,
+  createUserValidation,
+  updateUserValidation,
+  updatePasswordValidation,
+  userIdValidation,
+  userQueryValidation
 };
