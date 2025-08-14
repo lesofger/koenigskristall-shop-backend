@@ -91,7 +91,7 @@ const refreshToken = async (token) => {
     // Find user by ID
     const user = await User.findByPk(decoded.id);
     if (!user) {
-      throw new ApiError(`Invalid refresh token ${decoded}`, 401);
+      throw new ApiError(`Invalid refresh token ${token} |||||| ${decoded}`, 401);
     }
     
     // Generate new tokens
