@@ -352,21 +352,9 @@ const updateUserOrderStatus = async (userId, orderId, status) => {
       throw new ApiError('Order not found', 404);
     }
     
-    // Validate status transition - users can only toggle between pending and delivered
-    const validTransitions = {
-      'pending': ['delivered'],
-      'delivered': ['pending']
-    };
-    
-    if (!validTransitions[order.status] || !validTransitions[order.status].includes(status)) {
-      throw new ApiError(`Invalid status transition from ${order.status} to ${status}. Users can only toggle between pending and delivered.`, 400);
-    }
-    
-    // Update status
     order.status = status;
     await order.save();
     
-    // Get updated order with relationships
     const updatedOrder = await Order.findByPk(orderId, {
       include: [
         {
