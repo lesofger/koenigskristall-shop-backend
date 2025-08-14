@@ -130,7 +130,7 @@ const handleWebhook = async (req, res, next) => {
         stripeConfig.webhookSecret
       );
     } catch (err) {
-      throw new ApiError(`Webhook signature verification failed: ${err.message}`, 400);
+      throw new ApiError(`Webhook signature verification failed: Sig: ${sig} ${err.message}`, 400);
     }
     
     // Handle the event

@@ -123,8 +123,8 @@ const updateUserOrderStatus = async (req, res, next) => {
     const { id } = req.params;
     const { status } = req.body;
     
-    if (!status || !['pending', 'delivered'].includes(status)) {
-      throw new ApiError('Invalid status. Users can only toggle between pending and delivered.', 400);
+    if (!status) {
+      throw new ApiError('Invalid status.', 400);
     }
     
     const order = await orderService.updateUserOrderStatus(userId, id, status);
