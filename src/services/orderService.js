@@ -51,6 +51,10 @@ const createOrder = async (userId, paymentIntentId, shippingAddress, items) => {
       });
     }
     
+    // Add shipping cost to total amount
+    const shippingCost = 5.00;
+    totalAmount = Math.round((totalAmount + shippingCost) * 100) / 100;
+    
     // Create order
     const order = await Order.create({
       userId,
