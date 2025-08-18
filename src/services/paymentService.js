@@ -11,6 +11,9 @@ const stripeClient = stripe(stripeConfig.secretKey);
 // Import PayPal SDK
 const paypal = require('@paypal/checkout-server-sdk');
 
+// Shipping cost constant
+const SHIPPING_COST = 5.00; // $5 shipping cost
+
 /**
  * Create a payment intent for checkout
  * @param {Number} userId - User ID
@@ -52,9 +55,12 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card', shippi
       });
     }
     
+    // Add shipping cost to total amount
+    const totalWithShipping = Math.round((totalAmount + SHIPPING_COST) * 100) / 100;
+    
     // Create payment intent with different configurations based on payment method
     const paymentIntentData = {
-      amount: Math.round(totalAmount * 100), // Convert to cents
+      amount: Math.round(totalWithShipping * 100), // Convert to cents
       currency: 'eur', // Changed to EUR for German shop
       metadata: {
         userId: userId.toString(),
@@ -96,7 +102,7 @@ const createPaymentIntent = async (userId, items, paymentMethod = 'card', shippi
     return {
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
-      amount: totalAmount,
+      amount: totalWithShipping,
       paymentMethod: paymentMethod,
       shippingAddress: shippingAddress
     };
@@ -170,14 +176,15 @@ const createPayPalOrder = async (userId, items, shippingAddress = null, includeV
     // Create PayPal order request
     const request = new paypal.orders.OrdersCreateRequest();
     
-    // Calculate totals properly
+    // Calculate totals properly with shipping cost
     const itemTotal = totalAmount;
     const taxTotal = totalTax;
-    const grandTotal = Math.round((itemTotal + taxTotal) * 100) / 100;
+    const grandTotal = Math.round((itemTotal + taxTotal + SHIPPING_COST) * 100) / 100;
     
     console.log('PayPal Order Amounts:', {
       itemTotal: itemTotal.toFixed(2),
       taxTotal: taxTotal.toFixed(2),
+      shippingCost: SHIPPING_COST.toFixed(2),
       grandTotal: grandTotal.toFixed(2),
       items: validatedItems.map(item => ({
         name: item.product.name,
@@ -212,6 +219,10 @@ const createPayPalOrder = async (userId, items, shippingAddress = null, includeV
               item_total: {
                 currency_code: 'EUR',
                 value: itemTotal.toFixed(2)
+              },
+              shipping: {
+                currency_code: 'EUR',
+                value: SHIPPING_COST.toFixed(2)
               }
               // No tax_total for Kleinunternehmerregelung
             }
