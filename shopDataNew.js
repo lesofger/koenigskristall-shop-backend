@@ -6,17 +6,17 @@
 const shopData = [
     {
         id: 1,
-        name: "Bergkristall Trommelstein",
-        description:"",
+        name: "Bergkristall",
+        description:"Trommelstein",
         price: 8.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallA.jpeg",
+        image: "https://api.koenigskristall.de/public/images/BergkristallTS.jpg",
         quantity: 99999
     },
     {
         id: 2,
-        name: "Bergkristall Rohstein",
-        description:"",
+        name: "Bergkristall",
+        description:"Rohstein",
         price: 6.00,
         category: "Bergkristall",
         image: "https://api.koenigskristall.de/public/BergkristallRoh.jpeg",
@@ -58,8 +58,17 @@ const shopData = [
         image: "https://api.koenigskristall.de/public/CitrinA.jpeg",
         quantity: 99999
     },
-     {
+      {
         id: 7,
+        name: "Bergkristall Halskette",
+        description:"",
+        price: 20.00,
+        category: "Bergkristall",
+        image: "https://api.koenigskristall.de/public/CitrinA.jpeg",
+        quantity: 99999
+    },
+     {
+        id: 8,
         name: "Rosenquarz Trommelstein",
         description:"",
         price: 8.00,
@@ -68,7 +77,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 8,
+        id: 9,
         name: "Rosenquarz Rohstein / Klein",
         description:"",
         price: 6.00,
@@ -77,7 +86,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 9,
+        id: 10,
         name: "Rosenquarz Rohstein / Groß ",
         description:"",
         price: 22.00,
@@ -86,7 +95,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 10,
+        id: 11,
         name: "Rosenquarz Armband",
         description:"",
         price: 10.00,
@@ -95,7 +104,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 11,
+        id: 12,
         name: "Rosenquarz Halskette",
         description:"",
         price: 20.00,
@@ -104,7 +113,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 12,
+        id: 13,
         name: "Amethyst Trommelstein",
         description:"",
         price: 7.00,
@@ -113,7 +122,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 13,
+        id: 14,
         name: "Amethyst Druse / Klein",
         description:"",
         price: 10.00,
@@ -122,7 +131,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 14,
+        id: 15,
         name: "Amethyst Druse / Groß",
         description:"",
         price: 15.00,
@@ -130,7 +139,7 @@ const shopData = [
         image: "https://api.koenigskristall.de/public/RosenquarzTs.jpeg",
         quantity: 99999
     },{
-        id: 15,
+        id: 16,
         name: "Amethyst Spitze",
         description:"",
         price: 16.00,
@@ -139,7 +148,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 16,
+        id: 17,
         name: "Amethyst Armband",
         description:"",
         price: 15.00,
@@ -148,7 +157,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 17,
+        id: 18,
         name: "Amethyst Halskette",
         description:"",
         price: 20.00,
@@ -157,7 +166,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 18,
+        id: 19,
         name: "Citrin Trommelstein",
         description:"",
         price: 10.00,
@@ -166,7 +175,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 19,
+        id: 20,
         name: "Citrin Rohstein",
         description:"",
         price: 14.00,
@@ -175,7 +184,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 20,
+        id: 21,
         name: "Citrin Armband",
         description:"",
         price: 16.00,
@@ -184,7 +193,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 21,
+        id: 22,
         name: "Citrin Halskette",
         description:"",
         price: 20.00,
@@ -193,7 +202,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 22,
+        id: 23,
         name: "Orangencalcit Trommelstein",
         description:"",
         price: 10.00,
@@ -202,7 +211,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 23,
+        id: 24,
         name: "Orangencalcit Rohstein",
         description:"",
         price: 14.00,
@@ -211,7 +220,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 24,
+        id: 25,
         name: "Karneol Trommelstein",
         description:"",
         price: 8.00,
@@ -220,7 +229,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 25,
+        id: 26,
         name: "Karneol Rohstein",
         description:"",
         price: 8.00,
@@ -229,7 +238,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 26,
+        id: 27,
         name: "Karneol Armband",
         description:"",
         price: 10.00,
@@ -238,7 +247,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 27,
+        id: 28,
         name: "Mondstein Trommelstein",
         description:"",
         price: 12.00,
@@ -248,7 +257,7 @@ const shopData = [
 
     },
     {
-        id: 28,
+        id: 29,
         name: "Mondstein Armband",
         description:"",
         price: 16.00,
@@ -257,7 +266,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 29,
+        id: 30,
         name: "Selenit Trommelstein",
         description:"",
         price: 5.00,
@@ -266,7 +275,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 30,
+        id: 31,
         name: "Selenit Rohstein",
         description:"",
         price: 10.00,
@@ -275,7 +284,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 31,
+        id: 32,
         name: "Selenit Kugel",
         description:"",
         price: 15.00,
@@ -284,7 +293,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 32,
+        id: 33,
         name: "Selenit Stab",
         description:"",
         price: 10.00,
@@ -293,7 +302,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 33,
+        id: 34,
         name: "Aquamarin Trommelstein",
         description:"",
         price: 10.00,
@@ -302,7 +311,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 34,
+        id: 35,
         name: "Aquamarin Rohstein",
         description:"",
         price: 9.00,
@@ -311,7 +320,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 35,
+        id: 36,
         name: "Aquamarin Armband",
         description:"",
         price: 16.00,
@@ -320,7 +329,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 36,
+        id: 37,
         name: "Aquamarin Halskette",
         description:"",
         price: 20.00,
@@ -329,16 +338,16 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 37,
-        name: "Regenbogenfluorit Trommelstein",
-        description:"",
+        id: 38,
+        name: "Regenbogenfluorit",
+        description:"Trommelstein",
         price: 12.00,
         image: "https://api.koenigskristall.de/public/RosenquarzTs.jpeg",
         category: "Regenbogenfluorit",
         quantity: 99999
     },
      {
-        id: 38,
+        id: 39,
         name: "Regenbogenfluorit Rohstein",
         description:"",
         price: 10.00,
@@ -347,7 +356,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 39,
+        id: 40,
         name: "Regenbogenfluorit Armband",
         description:"",
         price: 10.00,
@@ -356,7 +365,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 40,
+        id: 41,
         name: "Grüner Fluorit Trommelstein",
         description:"",
         price: 14.00,
@@ -365,7 +374,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 41,
+        id: 42,
         name: "Grüner Fluorit Rohstein",
         description:"",
         price: 10.00,
@@ -374,7 +383,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 42,
+        id: 43,
         name: "Aventurin Trommelstein",
         description:"",
         price: 10.00,
@@ -383,7 +392,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 43,
+        id: 44,
         name: "Aventurin Rohstein",
         description:"",
         price: 8.00,
@@ -392,7 +401,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 44,
+        id: 45,
         name: "Aventurin Armband",
         description:"",
         price: 9.00,
@@ -401,7 +410,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 45,
+        id: 46,
         name: "Malachit Trommelstein",
         description:"",
         price: 14.00,
@@ -410,7 +419,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 46,
+        id: 47,
         name: "Malachit Armband",
         description:"",
         price: 12.00,
@@ -419,7 +428,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 47,
+        id: 48,
         name: "Malachit Halskette",
         description:"",
         price: 20.00,
@@ -428,7 +437,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 48,
+        id: 49,
         name: "Roter Jaspis Trommelstein",
         description:"",
         price: 10.00,
@@ -437,7 +446,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 49,
+        id: 50,
         name: "Algen Jaspis Trommelstein",
         description:"",
         price: 10.00,
@@ -446,7 +455,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 50,
+        id: 51,
         name: "Labradorit Trommelstein / Klein",
         description:"",
         price: 12.00,
@@ -455,7 +464,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 51,
+        id: 52,
         name: "Labradorit Freeform / Groß",
         description:"",
         price: 40.00,
@@ -464,7 +473,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 52,
+        id: 53,
         name: "Labradorit Rohstein",
         description:"",
         price: 12.00,
@@ -473,7 +482,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 53,
+        id: 54,
         name: "Labradorit Armband",
         description:"",
         price: 14.00,
@@ -482,7 +491,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 54,
+        id: 55,
         name: "Labradorit Halskette ",
         description:"",
         price: 20.00,
@@ -491,7 +500,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 55,
+        id: 56,
         name: "Rauchquarz Trommelstein",
         description:"",
         price: 12.00,
@@ -500,7 +509,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 56,
+        id: 57,
         name: "Rauchquarz Rohstein",
         description:"",
         price: 10.00,
@@ -509,7 +518,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 57,
+        id: 58,
         name: "Rauchquarz Armband",
         description:"",
         price: 12.00,
@@ -518,7 +527,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 58,
+        id: 59,
         name: "Pyrit Kugel",
         description:"",
         price: 12.00,
@@ -527,7 +536,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 59,
+        id: 60,
         name: "Pyrit Würfel",
         description:"",
         price: 10.00,
@@ -536,7 +545,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 60,
+        id: 61,
         name: "Tigerauge Trommelstein",
         description:"",
         price: 10.00,
@@ -545,7 +554,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 61,
+        id: 62,
         name: "Tigerauge Rohstein",
         description:"",
         price: 6.00,
@@ -554,7 +563,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 62,
+        id: 63,
         name: "Tigerauge Armband",
         description:"",
         price: 12.00,
@@ -563,7 +572,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 63,
+        id: 64,
         name: "Schwarzer Turmalin Trommelstein",
         description:"",
         price: 8.00,
@@ -572,7 +581,7 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 64,
+        id: 65,
         name: "Schwarzer Turmalin Rohstein / Klein",
         description:"",
         price: 10.00,
@@ -581,8 +590,8 @@ const shopData = [
         quantity: 99999
     },
      {
-        id: 65,
-        name: "Schwarzer Turmalin / Groß",
+        id: 66,
+        name: "Schwarzer Turmalin Rohstein / Groß",
         description:"",
         price: 25.00,
         image: "https://api.koenigskristall.de/public/RosenquarzTs.jpeg",
@@ -590,7 +599,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 66,
+        id: 67,
         name: "Schwarzer Turmalin Armband",
         description:"",
         price: 15.00,
@@ -599,7 +608,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 67,
+        id: 68,
         name: "Achatscheibe  mit Bergkristall Blau / Klein",
         description:"",
         price: 15.00,
@@ -608,7 +617,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 68,
+        id: 69,
         name: "Achatscheibe mit Bergkristall Blau / Groß",
         description:"",
         price: 30.00,
@@ -617,7 +626,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 69,
+        id: 70,
         name: "Achatscheibe mit Bergkristall Pink / Klein",
         description:"",
         price: 15.00,
@@ -626,7 +635,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 70,
+        id: 71,
         name: "Achatscheibe mit Bergkristall Pink / Groß",
         description:"",
         price: 30.00,
@@ -635,7 +644,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 71,
+        id: 72,
         name: "Achatscheibe mit Bergkristall Grün / Klein",
         description:"",
         price: 15.00,
