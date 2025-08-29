@@ -6,17 +6,17 @@
 const shopData = [
     {
         id: 1,
-        name: "Bergkristall Trommelstein",
-        description:"",
+        name: "Bergkristall",
+        description:"Trommelstein",
         price: 8.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallA.jpeg",
+        image: "https://api.koenigskristall.de/public/BergkristallTS.jpeg",
         quantity: 99999
     },
     {
         id: 2,
-        name: "Bergkristall Rohstein",
-        description:"",
+        name: "Bergkristall",
+        description:"Rohstein",
         price: 6.00,
         category: "Bergkristall",
         image: "https://api.koenigskristall.de/public/BergkristallRoh.jpeg",
@@ -339,8 +339,8 @@ const shopData = [
     },
      {
         id: 38,
-        name: "Regenbogenfluorit Trommelstein",
-        description:"",
+        name: "Regenbogenfluorit",
+        description:"Trommelstein",
         price: 12.00,
         image: "https://api.koenigskristall.de/public/RosenquarzTs.jpeg",
         category: "Regenbogenfluorit",
