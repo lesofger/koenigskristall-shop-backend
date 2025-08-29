@@ -10,7 +10,7 @@ const shopData = [
         description:"Trommelstein",
         price: 8.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallTS.jpeg",
+        image: "https://api.koenigskristall.de/public/images/BergkristallTS.jpg",
         quantity: 99999
     },
     {
