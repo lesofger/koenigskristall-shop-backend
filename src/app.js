@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 });
 
 // Raw body parsing for Stripe webhooks (must come before JSON parsing)
-app.use('/public', express.static(__dirname + '/public/images'));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/api/payments/webhook', express.raw({ type: 'application/json' }));
 
 // JSON and URL-encoded body parsing for other routes

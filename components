@@ -1,0 +1,19 @@
+<script>start("e:\\work\\Georg\\koenigskristall-shop-frontend\\src\\components\\");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("admin","admin",1,0,"0 B",1755016197,"8/12/25, 9:29:57 AM");</script>
+<script>addRow("InpiredComponents","InpiredComponents",1,0,"0 B",1754822164,"8/10/25, 3:36:04 AM");</script>
+<script>addRow("ui","ui",1,0,"0 B",1753534019,"7/26/25, 5:46:59 AM");</script>
+<script>addRow("AboutMe.jsx","AboutMe.jsx",0,12020,"11.7 kB",1755096267,"8/13/25, 7:44:27 AM");</script>
+<script>addRow("BankTransferPayment.tsx","BankTransferPayment.tsx",0,10857,"10.6 kB",1755192999,"8/14/25, 10:36:39 AM");</script>
+<script>addRow("BottomFooter.jsx","BottomFooter.jsx",0,1695,"1.7 kB",1755096267,"8/13/25, 7:44:27 AM");</script>
+<script>addRow("CardPayment.tsx","CardPayment.tsx",0,4263,"4.2 kB",1754493407,"8/6/25, 8:16:47 AM");</script>
+<script>addRow("CrystalGrid.tsx","CrystalGrid.tsx",0,8341,"8.1 kB",1754822164,"8/10/25, 3:36:04 AM");</script>
+<script>addRow("Footer.jsx","Footer.jsx",0,3026,"3.0 kB",1755131601,"8/13/25, 5:33:21 PM");</script>
+<script>addRow("Hero.tsx","Hero.tsx",0,2585,"2.5 kB",1754822164,"8/10/25, 3:36:04 AM");</script>
+<script>addRow("Layout.tsx","Layout.tsx",0,286,"286 B",1753461031,"7/25/25, 9:30:31 AM");</script>
+<script>addRow("Navbar.tsx","Navbar.tsx",0,11008,"10.8 kB",1755086301,"8/13/25, 4:58:21 AM");</script>
+<script>addRow("PayPalPayment.tsx","PayPalPayment.tsx",0,8281,"8.1 kB",1755189348,"8/14/25, 9:35:48 AM");</script>
+<script>addRow("ProductCard.tsx","ProductCard.tsx",0,2191,"2.1 kB",1753465301,"7/25/25, 10:41:41 AM");</script>
+<script>addRow("ProtectedRoute.tsx","ProtectedRoute.tsx",0,1201,"1.2 kB",1753676641,"7/27/25, 9:24:01 PM");</script>
+<script>addRow("QualityPromise.jsx","QualityPromise.jsx",0,6063,"5.9 kB",1754822164,"8/10/25, 3:36:04 AM");</script>
+<script>addRow("Services.tsx","Services.tsx",0,4379,"4.3 kB",1754822164,"8/10/25, 3:36:04 AM");</script>
