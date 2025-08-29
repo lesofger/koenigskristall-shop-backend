@@ -28,7 +28,7 @@ const shopData = [
         description:"4cm - 6cm",
         price: 12.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallSp.Kl.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallSpKlein.jpg",
         quantity: 99999
     },
     {
@@ -369,7 +369,7 @@ const shopData = [
         name: "Grüner Fluorit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/GrünerTS.jpg",
+        image: "https://api.koenigskristall.de/public/GruenerFluoritTS.jpg",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -378,7 +378,7 @@ const shopData = [
         name: "Grüner Fluorit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/GrünerRS.jpg",
+        image: "https://api.koenigskristall.de/public/GruenerFluoritRS.jpg",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -450,7 +450,7 @@ const shopData = [
         name: "Algen Jaspis Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/JaspisGrün.jpg",
+        image: "https://api.koenigskristall.de/public/JaspisGruen.jpg",
         category: "Jaspis",
         quantity: 99999
     },
@@ -540,7 +540,7 @@ const shopData = [
         name: "Pyrit Würfel",
         description:"2cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/PyritWürfel.jpg",
+        image: "https://api.koenigskristall.de/public/PyritWuerfel.jpg",
         category: "Pyrit",
         quantity: 99999
     },
@@ -648,7 +648,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Grün / Klein",
         description:"6cm - 8cm",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/Grünklein.jpg",
+        image: "https://api.koenigskristall.de/public/Gruenklein.jpg",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     }
