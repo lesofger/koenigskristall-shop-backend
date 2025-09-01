@@ -141,7 +141,7 @@ const shopData = [
     },{
         id: 16,
         name: "Amethyst Spitze",
-        description:"7cm - 8cm",             
+        description:"6cm - 8cm",             
         price: 16.00,
         category: "Amethyst",
         image: "https://api.koenigskristall.de/public/AmethSpitz.webp",
