@@ -10,7 +10,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 8.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallTS.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallTS.webp",
         quantity: 99999
     },
     {
@@ -19,7 +19,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 6.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallRS.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallRS.webp",
         quantity: 99999
     },
     {
@@ -28,7 +28,7 @@ const shopData = [
         description:"4cm - 6cm",
         price: 12.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallSp.Kl.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallSpKlein.webp",
         quantity: 99999
     },
     {
@@ -37,7 +37,7 @@ const shopData = [
         description:"4cm - 8cm",
         price: 25.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallSpGr.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallSpGr.webp",
         quantity: 99999
     },
      {
@@ -46,7 +46,7 @@ const shopData = [
         description:"5cm - 8cm",
         price: 18.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallStufe.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallStufe.webp",
         quantity: 99999
     },
     {
@@ -55,7 +55,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallArm.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallArm.webp",
         quantity: 99999
     },
       {
@@ -64,7 +64,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
         category: "Bergkristall",
-        image: "https://api.koenigskristall.de/public/BergkristallKett.jpg",
+        image: "https://api.koenigskristall.de/public/BergkristallKett.webp",
         quantity: 99999
     },
      {
@@ -73,7 +73,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 8.00,
         category: "Rosenquarz",
-        image: "https://api.koenigskristall.de/public/RosenTS.jpg",
+        image: "https://api.koenigskristall.de/public/RosenTS.webp",
         quantity: 99999
     },
     {
@@ -82,7 +82,7 @@ const shopData = [
         description:"4cm - 6cm",
         price: 6.00,
         category: "Rosenquarz",
-        image: "https://api.koenigskristall.de/public/RosenRsKlein.jpg",
+        image: "https://api.koenigskristall.de/public/RosenRsKlein.webp",
         quantity: 99999
     },
     {
@@ -91,7 +91,7 @@ const shopData = [
         description:"8cm - 10cm",
         price: 22.00,
         category: "Rosenquarz",
-        image: "https://api.koenigskristall.de/public/RosenRsGroß.jpg",
+        image: "https://api.koenigskristall.de/public/RosenRsGroß.webp",
         quantity: 99999
     },
     {
@@ -100,7 +100,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
         category: "Rosenquarz",
-        image: "https://api.koenigskristall.de/public/RosenArm.jpg",
+        image: "https://api.koenigskristall.de/public/RosenArm.webp",
         quantity: 99999
     },
     {
@@ -109,7 +109,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
         category: "Rosenquarz",
-        image: "https://api.koenigskristall.de/public/RosenKett.jpg",
+        image: "https://api.koenigskristall.de/public/RosenKett.webp",
         quantity: 99999
     },
     {
@@ -118,7 +118,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 7.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethTS.jpg",
+        image: "https://api.koenigskristall.de/public/AmethTS.webp",
         quantity: 99999
     },
     {
@@ -127,7 +127,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 10.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethDruKl.jpg",
+        image: "https://api.koenigskristall.de/public/AmethDruKl.webp",
         quantity: 99999
     },
     {
@@ -136,7 +136,7 @@ const shopData = [
         description:"5cm - 7cm",
         price: 15.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethDruGr.jpg",
+        image: "https://api.koenigskristall.de/public/AmethDruGr.webp",
         quantity: 99999
     },{
         id: 16,
@@ -144,7 +144,7 @@ const shopData = [
         description:"6cm - 8cm",             
         price: 16.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethSpitz.jpg",
+        image: "https://api.koenigskristall.de/public/AmethSpitz.webp",
         quantity: 99999
     },
     {
@@ -153,7 +153,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 15.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethArm.jpg",
+        image: "https://api.koenigskristall.de/public/AmethArm.webp",
         quantity: 99999
     },
     {
@@ -162,7 +162,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
         category: "Amethyst",
-        image: "https://api.koenigskristall.de/public/AmethKett.jpg",
+        image: "https://api.koenigskristall.de/public/AmethKett.webp",
         quantity: 99999
     },
     {
@@ -171,7 +171,7 @@ const shopData = [
         description:"2cm - 4cm",
         price: 10.00,
         category: "Citrin",
-        image: "https://api.koenigskristall.de/public/CitrinTS.jpg",
+        image: "https://api.koenigskristall.de/public/CitrinTS.webp",
         quantity: 99999
     },
     {
@@ -180,7 +180,7 @@ const shopData = [
         description:"4cm - 6cm",
         price: 14.00,
         category: "Citrin",
-        image: "https://api.koenigskristall.de/public/CitrinRoh.jpg",
+        image: "https://api.koenigskristall.de/public/CitrinRoh.webp",
         quantity: 99999
     },
     {
@@ -189,7 +189,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
         category: "Citrin",
-        image: "https://api.koenigskristall.de/public/CitrinArm.jpg",
+        image: "https://api.koenigskristall.de/public/CitrinArm.webp",
         quantity: 99999
     },
     {
@@ -198,7 +198,7 @@ const shopData = [
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
         category: "Citrin",
-        image: "https://api.koenigskristall.de/public/CitrinKett.jpg",
+        image: "https://api.koenigskristall.de/public/CitrinKett.webp",
         quantity: 99999
     },
     {
@@ -207,7 +207,7 @@ const shopData = [
         description:"3cm - 5cm",
         price: 10.00,
         category: "Orangencalcit",
-        image: "https://api.koenigskristall.de/public/OrangeTS.jpg",
+        image: "https://api.koenigskristall.de/public/OrangeTS.webp",
         quantity: 99999
     },
     {
@@ -215,7 +215,7 @@ const shopData = [
         name: "Orangencalcit Rohstein",
         description:"5cm - 7cm",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/OrangeRS.jpg",
+        image: "https://api.koenigskristall.de/public/OrangeRS.webp",
         category: "Orangencalcit",
         quantity: 99999
     },
@@ -224,7 +224,7 @@ const shopData = [
         name: "Karneol Trommelstein",
         description:"4cm - 5cm",
         price: 8.00,
-        image: "https://api.koenigskristall.de/public/KarneolTS.jpg",
+        image: "https://api.koenigskristall.de/public/KarneolTS.webp",
         category: "Karneol",
         quantity: 99999
     },
@@ -233,7 +233,7 @@ const shopData = [
         name: "Karneol Rohstein",
         description:"4cm - 6cm",
         price: 8.00,
-        image: "https://api.koenigskristall.de/public/KarneolRS.jpg",
+        image: "https://api.koenigskristall.de/public/KarneolRS.webp",
         category: "Karneol",
         quantity: 99999
     },
@@ -242,7 +242,7 @@ const shopData = [
         name: "Karneol Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/KarneolArm.jpg",
+        image: "https://api.koenigskristall.de/public/KarneolArm.webp",
         category: "Karneol",
         quantity: 99999
     },
@@ -251,7 +251,7 @@ const shopData = [
         name: "Mondstein Trommelstein",
         description:"2cm - 3cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/MondTS.jpg",
+        image: "https://api.koenigskristall.de/public/MondTS.webp",
         category: "Mondstein",
         quantity: 99999
 
@@ -261,7 +261,7 @@ const shopData = [
         name: "Mondstein Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
-        image: "https://api.koenigskristall.de/public/MondArm.jpg",
+        image: "https://api.koenigskristall.de/public/MondArm.webp",
         category: "Mondstein",
         quantity: 99999
     },
@@ -270,7 +270,7 @@ const shopData = [
         name: "Selenit Trommelstein",
         description:"2cm - 3cm",
         price: 5.00,
-        image: "https://api.koenigskristall.de/public/SeleTS.jpg",
+        image: "https://api.koenigskristall.de/public/SeleTS.webp",
         category: "Selenit",
         quantity: 99999
     },
@@ -279,7 +279,7 @@ const shopData = [
         name: "Selenit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/SeleRS.jpg",
+        image: "https://api.koenigskristall.de/public/SeleRS.webp",
         category: "Selenit",
         quantity: 99999
     },
@@ -288,7 +288,7 @@ const shopData = [
         name: "Selenit Kugel",
         description:"3cm - 5cm",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/SeleKugel.jpg",
+        image: "https://api.koenigskristall.de/public/SeleKugel.webp",
         category: "Selenit",
         quantity: 99999
     },
@@ -297,7 +297,7 @@ const shopData = [
         name: "Selenit Stab",
         description:"10cm - 12cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/SeleStab.jpg",
+        image: "https://api.koenigskristall.de/public/SeleStab.webp",
         category: "Selenit",
         quantity: 99999
     },
@@ -306,7 +306,7 @@ const shopData = [
         name: "Aquamarin Trommelstein",
         description:"2cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/AquaTS.jpg",
+        image: "https://api.koenigskristall.de/public/AquaTS.webp",
         category: "Aquamarin",
         quantity: 99999
     },
@@ -315,7 +315,7 @@ const shopData = [
         name: "Aquamarin Rohstein",
         description:"4cm - 5cm",
         price: 9.00,
-        image: "https://api.koenigskristall.de/public/AquaRS.jpg",
+        image: "https://api.koenigskristall.de/public/AquaRS.webp",
         category: "Aquamarin",
         quantity: 99999
     },
@@ -324,7 +324,7 @@ const shopData = [
         name: "Aquamarin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
-        image: "https://api.koenigskristall.de/public/AquaArm.jpg",
+        image: "https://api.koenigskristall.de/public/AquaArm.webp",
         category: "Aquamarin",
         quantity: 99999
     },
@@ -333,7 +333,7 @@ const shopData = [
         name: "Aquamarin Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
-        image: "https://api.koenigskristall.de/public/AquaKett.jpg",
+        image: "https://api.koenigskristall.de/public/AquaKett.webp",
         category: "Aquamarin",
         quantity: 99999
     },
@@ -342,7 +342,7 @@ const shopData = [
         name: "Regenbogenfluorit Trommelstein",
         description:"3cm - 4cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/RegenTS.jpg",
+        image: "https://api.koenigskristall.de/public/RegenTS.webp",
         category: "Regenbogenfluorit",
         quantity: 99999
     },
@@ -351,7 +351,7 @@ const shopData = [
         name: "Regenbogenfluorit Rohstein",
         description:"5cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/RegenRS.jpg",
+        image: "https://api.koenigskristall.de/public/RegenRS.webp",
         category: "Regenbogenfluorit",
         quantity: 99999
     },
@@ -360,7 +360,7 @@ const shopData = [
         name: "Regenbogenfluorit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/RegenArm.jpg",
+        image: "https://api.koenigskristall.de/public/RegenArm.webp",
         category: "Regenbogenfluorit",
         quantity: 99999
     },
@@ -369,7 +369,7 @@ const shopData = [
         name: "Grüner Fluorit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/GrünerTS.jpg",
+        image: "https://api.koenigskristall.de/public/GruenerFluoritTS.webp",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -378,7 +378,7 @@ const shopData = [
         name: "Grüner Fluorit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/GrünerRS.jpg",
+        image: "https://api.koenigskristall.de/public/GruenerFluoritRS.webp",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -387,7 +387,7 @@ const shopData = [
         name: "Aventurin Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/AvenTS.jpg",
+        image: "https://api.koenigskristall.de/public/AvenTS.webp",
         category: "Aventurin",
         quantity: 99999
     },
@@ -396,7 +396,7 @@ const shopData = [
         name: "Aventurin Rohstein",
         description:"3cm - 5cm",
         price: 8.00,
-        image: "https://api.koenigskristall.de/public/AvenRS.jpg",
+        image: "https://api.koenigskristall.de/public/AvenRS.webp",
         category: "Aventurin",
         quantity: 99999
     },
@@ -405,7 +405,7 @@ const shopData = [
         name: "Aventurin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 9.00,
-        image: "https://api.koenigskristall.de/public/AvenArm.jpg",
+        image: "https://api.koenigskristall.de/public/AvenArm.webp",
         category: "Aventurin",
         quantity: 99999
     },
@@ -414,7 +414,7 @@ const shopData = [
         name: "Malachit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/MalaTS.jpg",
+        image: "https://api.koenigskristall.de/public/MalaTS.webp",
         category: "Malachit",
         quantity: 99999
     },
@@ -423,7 +423,7 @@ const shopData = [
         name: "Malachit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/MalaArm.jpg",
+        image: "https://api.koenigskristall.de/public/MalaArm.webp",
         category: "Malachit",
         quantity: 99999
     },
@@ -432,7 +432,7 @@ const shopData = [
         name: "Malachit Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
-        image: "https://api.koenigskristall.de/public/MalaKett.jpg",
+        image: "https://api.koenigskristall.de/public/MalaKett.webp",
         category: "Malachit",
         quantity: 99999
     },
@@ -441,7 +441,7 @@ const shopData = [
         name: "Roter Jaspis Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/JaspisRot.jpg",
+        image: "https://api.koenigskristall.de/public/JaspisRot.webp",
         category: "Jaspis",
         quantity: 99999
     },
@@ -450,7 +450,7 @@ const shopData = [
         name: "Algen Jaspis Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/JaspisGrün.jpg",
+        image: "https://api.koenigskristall.de/public/JaspisGruen.webp",
         category: "Jaspis",
         quantity: 99999
     },
@@ -459,7 +459,7 @@ const shopData = [
         name: "Labradorit Trommelstein / Klein",
         description:"2cm - 3cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/LabraTS.jpg",
+        image: "https://api.koenigskristall.de/public/LabraTS.webp",
         category: "Labradorit",
         quantity: 99999
     },
@@ -468,7 +468,7 @@ const shopData = [
         name: "Labradorit Freeform / Groß",
         description:"6cm - 10cm",
         price: 40.00,
-        image: "https://api.koenigskristall.de/public/LabraFree.jpg",
+        image: "https://api.koenigskristall.de/public/LabraFree.webp",
         category: "Labradorit",
         quantity: 99999
     },
@@ -477,7 +477,7 @@ const shopData = [
         name: "Labradorit Rohstein",
         description:"3cm - 6cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/LabraRS.jpg",
+        image: "https://api.koenigskristall.de/public/LabraRS.webp",
         category: "Labradorit",
         quantity: 99999
     },
@@ -486,7 +486,7 @@ const shopData = [
         name: "Labradorit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/LabraArm.jpg",
+        image: "https://api.koenigskristall.de/public/LabraArm.webp",
         category: "Labradorit",
         quantity: 99999
     },
@@ -495,7 +495,7 @@ const shopData = [
         name: "Labradorit Halskette ",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
-        image: "https://api.koenigskristall.de/public/LabraKett.jpg",
+        image: "https://api.koenigskristall.de/public/LabraKett.webp",
         category: "Labradorit",
         quantity: 99999
     },
@@ -504,7 +504,7 @@ const shopData = [
         name: "Rauchquarz Trommelstein",
         description:"3cm - 4cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/RauchTS.jpg",
+        image: "https://api.koenigskristall.de/public/RauchTS.webp",
         category: "Rauchquarz",
         quantity: 99999
     },
@@ -513,7 +513,7 @@ const shopData = [
         name: "Rauchquarz Rohstein",
         description:"5cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/RauchRS.jpg",
+        image: "https://api.koenigskristall.de/public/RauchRS.webp",
         category: "Rauchquarz",
         quantity: 99999
     },
@@ -522,7 +522,7 @@ const shopData = [
         name: "Rauchquarz Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/RauchArm.jpg",
+        image: "https://api.koenigskristall.de/public/RauchArm.webp",
         category: "Rauchquarz",
         quantity: 99999
     },
@@ -531,7 +531,7 @@ const shopData = [
         name: "Pyrit Kugel",
         description:"3cm - 4cm",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/PyritKugel.jpg",
+        image: "https://api.koenigskristall.de/public/PyritKugel.webp",
         category: "Pyrit",
         quantity: 99999
     },
@@ -540,7 +540,7 @@ const shopData = [
         name: "Pyrit Würfel",
         description:"2cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/PyritWürfel.jpg",
+        image: "https://api.koenigskristall.de/public/PyritWuerfel.webp",
         category: "Pyrit",
         quantity: 99999
     },
@@ -549,7 +549,7 @@ const shopData = [
         name: "Tigerauge Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/TigerTS.jpg",
+        image: "https://api.koenigskristall.de/public/TigerTS.webp",
         category: "Tigerauge",
         quantity: 99999
     },
@@ -558,7 +558,7 @@ const shopData = [
         name: "Tigerauge Rohstein",
         description:"4cm - 5cm",
         price: 6.00,
-        image: "https://api.koenigskristall.de/public/TigerRS.jpg",
+        image: "https://api.koenigskristall.de/public/TigerRS.webp",
         category: "Tigerauge",
         quantity: 99999
     },
@@ -567,7 +567,7 @@ const shopData = [
         name: "Tigerauge Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
-        image: "https://api.koenigskristall.de/public/TigerArm.jpg",
+        image: "https://api.koenigskristall.de/public/TigerArm.webp",
         category: "Tigerauge",
         quantity: 99999
     },
@@ -576,7 +576,7 @@ const shopData = [
         name: "Schwarzer Turmalin Trommelstein",
         description:"2cm - 4cm",
         price: 8.00,
-        image: "https://api.koenigskristall.de/public/SchwarzTS.jpg",
+        image: "https://api.koenigskristall.de/public/SchwarzTS.webp",
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
@@ -585,7 +585,7 @@ const shopData = [
         name: "Schwarzer Turmalin Rohstein / Klein",
         description:"4cm - 5cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/SchwarzRSklein.jpg",
+        image: "https://api.koenigskristall.de/public/SchwarzRSklein.webp",
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
@@ -594,7 +594,7 @@ const shopData = [
         name: "Schwarzer Turmalin Rohstein / Groß",
         description:"5cm - 8cm",
         price: 25.00,
-        image: "https://api.koenigskristall.de/public/SchwarzRSgroß.jpg",
+        image: "https://api.koenigskristall.de/public/SchwarzRSgroß.webp",
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
@@ -603,7 +603,7 @@ const shopData = [
         name: "Schwarzer Turmalin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/SchwarzArm.jpg",
+        image: "https://api.koenigskristall.de/public/SchwarzArm.webp",
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
@@ -612,7 +612,7 @@ const shopData = [
         name: "Achatscheibe  mit Bergkristall Blau / Klein",
         description:"6cm - 8cm",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/Blauklein.jpg",
+        image: "https://api.koenigskristall.de/public/Blauklein.webp",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     },
@@ -621,7 +621,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Blau / Groß",
         description:"8cm - 12cm",
         price: 30.00,
-        image: "https://api.koenigskristall.de/public/Blaugroß.jpg",
+        image: "https://api.koenigskristall.de/public/Blaugroß.webp",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     },
@@ -630,7 +630,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Pink / Klein",
         description:"6cm - 8cm",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/Rosaklein1.jpg",
+        image: "https://api.koenigskristall.de/public/Rosaklein1.webp",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     },
@@ -639,7 +639,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Pink / Groß",
         description:"8cm - 12cm",
         price: 30.00,
-        image: "https://api.koenigskristall.de/public/Rosagroß.jpg",
+        image: "https://api.koenigskristall.de/public/Rosagroß.webp",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     },
@@ -648,7 +648,7 @@ const shopData = [
         name: "Achatscheibe mit Bergkristall Grün / Klein",
         description:"6cm - 8cm",
         price: 15.00,
-        image: "https://api.koenigskristall.de/public/Grünklein.jpg",
+        image: "https://api.koenigskristall.de/public/Gruenklein.webp",
         category: "Achatscheibe mit Bergkristall",
         quantity: 99999
     }
