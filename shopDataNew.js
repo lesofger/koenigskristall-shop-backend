@@ -141,7 +141,7 @@ const shopData = [
     },{
         id: 16,
         name: "Amethyst Spitze",
-        description:"6cm - 8cm",             
+        description:"7cm - 8cm",             
         price: 16.00,
         category: "Amethyst",
         image: "https://api.koenigskristall.de/public/AmethSpitz.webp",
@@ -369,7 +369,7 @@ const shopData = [
         name: "Grüner Fluorit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
-        image: "https://api.koenigskristall.de/public/GruenerFluoritTS.webp",
+        image: "https://api.koenigskristall.de/public/GruenerTS.webp",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -378,7 +378,7 @@ const shopData = [
         name: "Grüner Fluorit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
-        image: "https://api.koenigskristall.de/public/GruenerFluoritRS.webp",
+        image: "https://api.koenigskristall.de/public/GruenerRS.webp",
         category: "Grüner Fluorit",
         quantity: 99999
     },
@@ -456,7 +456,7 @@ const shopData = [
     },
      {
         id: 51,
-        name: "Labradorit Trommelstein / Klein",
+        name: "Labradorit Trommelstein",
         description:"2cm - 3cm",
         price: 12.00,
         image: "https://api.koenigskristall.de/public/LabraTS.webp",
