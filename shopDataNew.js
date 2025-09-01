@@ -456,7 +456,7 @@ const shopData = [
     },
      {
         id: 51,
-        name: "Labradorit Trommelstein / Klein",
+        name: "Labradorit Trommelstein",
         description:"2cm - 3cm",
         price: 12.00,
         image: "https://api.koenigskristall.de/public/LabraTS.webp",
