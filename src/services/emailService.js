@@ -56,7 +56,7 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Payment Confirmation - Königskristall Shop</title>
+        <title>Zahlungsbestätigung - Koenigskristall Shop</title>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -75,23 +75,23 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
         <div class="container">
           <div class="header">
             <div class="success-icon">✅</div>
-            <h1>Payment Confirmed!</h1>
-            <p>Thank you for your purchase from Königskristall Shop</p>
+            <h1>Zahlung erfolgreich!</h1>
+            <p>Danke für deine Bestellung bei Koenigskristall</p>
           </div>
           
           <div class="content">
             <p>Dear ${user.firstName} ${user.lastName},</p>
             
-            <p>Your payment has been successfully processed and your order is now confirmed!</p>
+            <p>Deine Zahlung wurde erfolgreich verarbeitet und deine Bestellung ist nun bestätigt!</p>
             
             <div class="order-details">
-              <h3>Order Details</h3>
-              <p><strong>Order ID:</strong> #${order.id}</p>
-              <p><strong>Order Date:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
-              <p><strong>Payment Method:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
-              <p><strong>Transaction ID:</strong> ${transactionId}</p>
+              <h3>Bestelldetails</h3>
+              <p><strong>Bestell ID:</strong> #${order.id}</p>
+              <p><strong>Bestelldatum:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
+              <p><strong>Bezahlmethode:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
+              <p><strong>Transaktions ID:</strong> ${transactionId}</p>
               
-              <h4>Items Ordered:</h4>
+              <h4>Deine Kristalle:</h4>
               <table class="items-table">
                 <thead>
                   <tr>
@@ -108,31 +108,31 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
               </table>
               
               <div class="total">
-                <p><strong>Subtotal:</strong> €${(order.totalAmount - 5.00).toFixed(2)}</p>
-                <p><strong>Shipping:</strong> €5.00</p>
-                <p><strong>Total Amount:</strong> €${order.totalAmount.toFixed(2)}</p>
+                <p><strong>Zwischensumme:</strong> €${(order.totalAmount - 5.00).toFixed(2)}</p>
+                <p><strong>Lieferkosten:</strong> €5.00</p>
+                <p><strong>Gesamtsumme:</strong> €${order.totalAmount.toFixed(2)}</p>
               </div>
             </div>
             
             ${shippingAddress}
             
-            <p><strong>What happens next?</strong></p>
+            <p><strong>Wie geht es weiter?</strong></p>
             <ul>
-              <li>We'll process your order and prepare it for shipping</li>
-              <li>You'll receive a shipping confirmation email with tracking information</li>
-              <li>Your order will be shipped within 2-3 business days</li>
+              <li>Ich werde deine Bestellung bearbeiten und zum versenden vorbereiten</li>
+              <li>Danach erhälst du von mir eine Bestätigung, das dein Paket versendet wurde</li>
+              <li>Dann wirst du in 2-3 Tagen, deinen Kristall in den Händen halten</li>
             </ul>
             
-            <p>If you have any questions about your order, please don't hesitate to contact us.</p>
+            <p>Wenn du fragen zu deiner Bestellung haben solltest, zögere nicht, mich zu kontaktieren.</p>
             
-            <p>Thank you for choosing Königskristall Shop!</p>
+            <p>Danke, dass du mir dein Vertrauen gibst!</p>
             
-            <p>Best regards,<br>The Königskristall Team</p>
+            <p>Liebe Grüße,<br>Maja von Koenigskristall</p>
           </div>
           
           <div class="footer">
-            <p>This email was sent to ${user.email}</p>
-            <p>© ${new Date().getFullYear()} Königskristall Shop. All rights reserved.</p>
+            <p>Diese email wurde gesendet an ${user.email}</p>
+            <p>© ${new Date().getFullYear()} Koenigskristall Shop. All rights reserved.</p>
           </div>
         </div>
       </body>
@@ -205,7 +205,7 @@ const sendAdminOrderNotification = async (order, paymentMethod, transactionId) =
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Order Notification - Königskristall Shop</title>
+        <title>Neue Bestellung  - Koenigskristall Shop</title>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -225,14 +225,14 @@ const sendAdminOrderNotification = async (order, paymentMethod, transactionId) =
           </div>
           
           <div class="content">
-            <p>A new order has been placed and payment has been confirmed!</p>
+            <p>Eine neue Bestellung kam gerade rein, die Zahlung wurde bestätigt!</p>
             
             <div class="order-details">
               <h3>Order Information</h3>
-              <p><strong>Order ID:</strong> #${order.id}</p>
-              <p><strong>Order Date:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
-              <p><strong>Payment Method:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
-              <p><strong>Transaction ID:</strong> ${transactionId}</p>
+              <p><strong>Bestell ID:</strong> #${order.id}</p>
+              <p><strong>Bestelldatum:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
+              <p><strong>Bezahlmethode:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
+              <p><strong>Transaktions ID:</strong> ${transactionId}</p>
               
               <h4>Customer Information</h4>
               <p><strong>Name:</strong> ${user.firstName} ${user.lastName}</p>
@@ -243,9 +243,9 @@ const sendAdminOrderNotification = async (order, paymentMethod, transactionId) =
                 <thead>
                   <tr>
                     <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
+                    <th>Menge</th>
+                    <th>Preis</th>
+                    <th>Gesamtsumme</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -254,11 +254,11 @@ const sendAdminOrderNotification = async (order, paymentMethod, transactionId) =
               </table>
               
               <div class="total">
-                <p><strong>Total Amount:</strong> €${order.totalAmount.toFixed(2)}</p>
+                <p><strong>Gesamtsumme:</strong> €${order.totalAmount.toFixed(2)}</p>
               </div>
             </div>
             
-            <p>Please process this order and update the status accordingly.</p>
+            <p>Maja bitte bearbeite die Bestellung und bearbeite den status der Bestellung im Adminbereich</p>
           </div>
         </div>
       </body>
