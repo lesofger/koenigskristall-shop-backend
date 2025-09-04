@@ -33,7 +33,7 @@ PAYPAL_MODE=sandbox
 
 ### SendGrid Configuration (Email Service)
 ```bash
-SENDGRID_API_KEY=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
+SENDGRID_API_KEY=""
 SENDGRID_FROM_EMAIL=shop@koenigskristall.de
 ADMIN_EMAIL=admin@koenigskristall.de
 ```
