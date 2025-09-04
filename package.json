@@ -10,7 +10,8 @@
     "import-products": "node scripts/importProducts.js",
     "update-products": "node scripts/importProducts.js update",
     "reset-products": "node scripts/importProducts.js reset",
-    "reset-db": "node scripts/resetDatabase.js"
+    "reset-db": "node scripts/resetDatabase.js",
+    "test-email": "node scripts/testEmailService.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/lesofger/koenigskristall-shop-backend#readme",
   "dependencies": {
     "@paypal/checkout-server-sdk": "^1.0.3",
+    "@sendgrid/mail": "^8.1.5",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
