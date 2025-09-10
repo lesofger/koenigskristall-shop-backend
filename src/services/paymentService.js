@@ -4,6 +4,7 @@ const { paypalClient } = require('../config/paypal');
 const { ApiError } = require('../middleware/error');
 const { Product } = require('../models');
 const orderService = require('./orderService');
+const emailService = require('./emailService');
 
 // Initialize Stripe with the secret key
 const stripeClient = stripe(stripeConfig.secretKey);
@@ -368,6 +369,24 @@ const capturePayPalPayment = async (userId, orderID, shippingAddress = null) => 
         items
       );
       
+      // Send payment confirmation email to customer
+      try {
+        await emailService.sendPaymentConfirmationEmail(order, 'paypal', captureResult.id);
+        console.log(`Payment confirmation email sent for PayPal payment: ${captureResult.id}`);
+      } catch (emailError) {
+        console.error('Failed to send payment confirmation email:', emailError);
+        // Don't fail the payment capture if email fails
+      }
+      
+      // Send admin notification email
+      try {
+        await emailService.sendAdminOrderNotification(order, 'paypal', captureResult.id);
+        console.log(`Admin notification email sent for PayPal payment: ${captureResult.id}`);
+      } catch (adminEmailError) {
+        console.error('Failed to send admin notification email:', adminEmailError);
+        // Don't fail the payment capture if admin email fails
+      }
+      
       // Get PayPal capture ID for reference
       const paypalCaptureId = captureResult.purchase_units[0].payments?.captures?.[0]?.id || 'N/A';
       
@@ -475,8 +494,26 @@ const handlePaymentIntentSucceeded = async (event) => {
   console.log('Shipping address from payment intent:', shippingAddress);
   
   // Create order with items from webhook
-  await orderService.createOrder(userId, paymentIntent.id, shippingAddress, items);
+  const order = await orderService.createOrder(userId, paymentIntent.id, shippingAddress, items);
   console.log(`Order created for payment intent: ${paymentIntent.id}`);
+  
+  // Send payment confirmation email to customer
+  try {
+    await emailService.sendPaymentConfirmationEmail(order, 'stripe', paymentIntent.id);
+    console.log(`Payment confirmation email sent for Stripe payment: ${paymentIntent.id}`);
+  } catch (emailError) {
+    console.error('Failed to send payment confirmation email:', emailError);
+    // Don't fail the webhook if email fails
+  }
+  
+  // Send admin notification email
+  try {
+    await emailService.sendAdminOrderNotification(order, 'stripe', paymentIntent.id);
+    console.log(`Admin notification email sent for Stripe payment: ${paymentIntent.id}`);
+  } catch (adminEmailError) {
+    console.error('Failed to send admin notification email:', adminEmailError);
+    // Don't fail the webhook if admin email fails
+  }
   
   return { received: true };
 };
