@@ -107,7 +107,7 @@ const refreshToken = async (token) => {
       throw new ApiError('Refresh token expired', 402);
     }
     if (error.name === 'JsonWebTokenError') {
-      throw new ApiError('Invalid refresh token', 402);
+      throw new ApiError('Invalid refresh token', 401);
     }
     if (error instanceof ApiError) {
       throw error;
