@@ -80,7 +80,7 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
           </div>
           
           <div class="content">
-            <p>Dear ${user.firstName} ${user.lastName},</p>
+            <p>Liebe/r ${user.firstName} ${user.lastName},</p>
             
             <p>Deine Zahlung wurde erfolgreich verarbeitet und deine Bestellung ist nun bestätigt!</p>
             
@@ -95,11 +95,11 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
               <table class="items-table">
                 <thead>
                   <tr>
-                    <th>Image</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
+                    <th>Bild</th>
+                    <th>Produkt</th>
+                    <th>Anzahl</th>
+                    <th>Preis</th>
+                    <th>Gesamt</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -221,28 +221,28 @@ const sendAdminOrderNotification = async (order, paymentMethod, transactionId) =
       <body>
         <div class="container">
           <div class="header">
-            <h2>🛍️ New Order Received</h2>
+            <h2>🛍️ Jemand hat etwas bestellt </h2>
           </div>
           
           <div class="content">
             <p>Eine neue Bestellung kam gerade rein, die Zahlung wurde bestätigt!</p>
             
             <div class="order-details">
-              <h3>Order Information</h3>
+              <h3>Bestellinformation</h3>
               <p><strong>Bestell ID:</strong> #${order.id}</p>
               <p><strong>Bestelldatum:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
               <p><strong>Bezahlmethode:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
               <p><strong>Transaktions ID:</strong> ${transactionId}</p>
               
-              <h4>Customer Information</h4>
+              <h4>Information zum Kunden</h4>
               <p><strong>Name:</strong> ${user.firstName} ${user.lastName}</p>
               <p><strong>Email:</strong> ${user.email}</p>
               
-              <h4>Order Items</h4>
+              <h4>Bestellpositionen</h4>
               <table class="items-table">
                 <thead>
                   <tr>
-                    <th>Product</th>
+                    <th>Produkt</th>
                     <th>Menge</th>
                     <th>Preis</th>
                     <th>Gesamtsumme</th>
