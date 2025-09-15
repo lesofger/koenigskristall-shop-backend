@@ -108,8 +108,8 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
               </table>
               
               <div class="total">
-                <p><strong>Zwischensumme:</strong> €${(order.totalAmount - 5.00).toFixed(2)}</p>
-                <p><strong>Lieferkosten:</strong> €5.00</p>
+                <p><strong>Zwischensumme:</strong> €${(order.totalAmount - 4.99).toFixed(2)}</p>
+                <p><strong>Lieferkosten:</strong> €4.99</p>
                 <p><strong>Gesamtsumme:</strong> €${order.totalAmount.toFixed(2)}</p>
               </div>
             </div>
