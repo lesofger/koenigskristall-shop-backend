@@ -52,7 +52,7 @@ const createOrder = async (userId, paymentIntentId, shippingAddress, items) => {
     }
     
     // Add shipping cost to total amount
-    const shippingCost = 4.99;
+    const shippingCost = 4.49;
     totalAmount = Math.round((totalAmount + shippingCost) * 100) / 100;
     
     // Create order
