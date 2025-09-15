@@ -13,7 +13,7 @@ const stripeClient = stripe(stripeConfig.secretKey);
 const paypal = require('@paypal/checkout-server-sdk');
 
 // Shipping cost constant
-const SHIPPING_COST = 5.00; // $5 shipping cost
+const SHIPPING_COST = 4.99; // $4.99 shipping cost
 
 /**
  * Create a payment intent for checkout
