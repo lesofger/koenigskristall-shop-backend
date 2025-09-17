@@ -482,6 +482,32 @@ const handlePaymentIntentSucceeded = async (event) => {
   
   console.log(`Payment succeeded for user ${userId} with items:`, items);
   
+  // Determine the actual payment method type
+  let paymentMethodType = 'stripe'; // default
+  try {
+    if (paymentIntent.payment_method) {
+      const paymentMethod = await stripeClient.paymentMethods.retrieve(paymentIntent.payment_method);
+      console.log('Payment method details:', paymentMethod);
+      
+      // Map Stripe payment method types to our email types
+      switch (paymentMethod.type) {
+        case 'sepa_debit':
+          paymentMethodType = 'bank_transfer';
+          break;
+        case 'card':
+          paymentMethodType = 'credit_card';
+          break;
+        default:
+          paymentMethodType = 'stripe';
+      }
+    }
+  } catch (error) {
+    console.error('Error retrieving payment method details:', error);
+    // Fall back to default 'stripe' if we can't determine the type
+  }
+  
+  console.log('Determined payment method type:', paymentMethodType);
+  
   // Create shipping address from payment intent
   const shippingAddress = {
     street: paymentIntent.shipping?.address?.line1 || 'N/A',
@@ -499,8 +525,8 @@ const handlePaymentIntentSucceeded = async (event) => {
   
   // Send payment confirmation email to customer
   try {
-    await emailService.sendPaymentConfirmationEmail(order, 'stripe', paymentIntent.id);
-    console.log(`Payment confirmation email sent for Stripe payment: ${paymentIntent.id}`);
+    await emailService.sendPaymentConfirmationEmail(order, paymentMethodType, paymentIntent.id);
+    console.log(`Payment confirmation email sent for ${paymentMethodType} payment: ${paymentIntent.id}`);
   } catch (emailError) {
     console.error('Failed to send payment confirmation email:', emailError);
     // Don't fail the webhook if email fails
@@ -508,8 +534,8 @@ const handlePaymentIntentSucceeded = async (event) => {
   
   // Send admin notification email
   try {
-    await emailService.sendAdminOrderNotification(order, 'stripe', paymentIntent.id);
-    console.log(`Admin notification email sent for Stripe payment: ${paymentIntent.id}`);
+    await emailService.sendAdminOrderNotification(order, paymentMethodType, paymentIntent.id);
+    console.log(`Admin notification email sent for ${paymentMethodType} payment: ${paymentIntent.id}`);
   } catch (adminEmailError) {
     console.error('Failed to send admin notification email:', adminEmailError);
     // Don't fail the webhook if admin email fails

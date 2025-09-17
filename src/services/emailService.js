@@ -88,7 +88,12 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
               <h3>Bestelldetails</h3>
               <p><strong>Bestell ID:</strong> #${order.id}</p>
               <p><strong>Bestelldatum:</strong> ${new Date(order.createdAt).toLocaleDateString('de-DE')}</p>
-              <p><strong>Bezahlmethode:</strong> ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}</p>
+              <p><strong>Bezahlmethode:</strong> ${
+  paymentMethod === 'credit_card' ? 'Credit Card' : 
+  paymentMethod === 'bank_transfer' ? 'Bank Transfer (SEPA)' : 
+  paymentMethod === 'paypal' ? 'PayPal' : 
+  'Credit Card' // fallback
+}</p>
               <p><strong>Transaktions ID:</strong> ${transactionId}</p>
               
               <h4>Deine Kristalle:</h4>
@@ -147,7 +152,12 @@ const sendPaymentConfirmationEmail = async (order, paymentMethod, transactionId)
       },
       subject: `Payment Confirmed - Order #${order.id}`,
       html: emailContent,
-      text: `Payment Confirmed for Order #${order.id}\n\nDear ${user.firstName} ${user.lastName},\n\nYour payment has been successfully processed and your order is now confirmed!\n\nOrder Details:\nOrder ID: #${order.id}\nOrder Date: ${new Date(order.createdAt).toLocaleDateString('de-DE')}\nPayment Method: ${paymentMethod === 'stripe' ? 'Credit Card' : 'PayPal'}\nTransaction ID: ${transactionId}\n\nTotal Amount: €${order.totalAmount.toFixed(2)}\n\nThank you for choosing Königskristall Shop!\n\nBest regards,\nThe Königskristall Team`
+      text: `Payment Confirmed for Order #${order.id}\n\nDear ${user.firstName} ${user.lastName},\n\nYour payment has been successfully processed and your order is now confirmed!\n\nOrder Details:\nOrder ID: #${order.id}\nOrder Date: ${new Date(order.createdAt).toLocaleDateString('de-DE')}\nPayment Method: ${
+  paymentMethod === 'credit_card' ? 'Credit Card' : 
+  paymentMethod === 'bank_transfer' ? 'Bank Transfer (SEPA)' : 
+  paymentMethod === 'paypal' ? 'PayPal' : 
+  'Credit Card' // fallback
+}\nTransaction ID: ${transactionId}\n\nTotal Amount: €${order.totalAmount.toFixed(2)}\n\nThank you for choosing Königskristall Shop!\n\nBest regards,\nThe Königskristall Team`
     };
 
     const result = await sgMail.send(msg);
