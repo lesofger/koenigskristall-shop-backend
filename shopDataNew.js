@@ -1,7 +1,5 @@
-﻿
-//i will bring the description for each crystal later 
+﻿//i will bring the description for each crystal later 
 // and for the pictures she will have an professional product shooting 
-
 
 const shopData = [
     {
@@ -40,7 +38,7 @@ const shopData = [
         image: "https://api.koenigskristall.de/public/BergkristallSpGr.webp",
         quantity: 99999
     },
-     {
+    {
         id: 5,
         name: "Bergkristall Stufe",
         description:"5cm - 8cm",
@@ -58,7 +56,7 @@ const shopData = [
         image: "https://api.koenigskristall.de/public/BergkristallArm.webp",
         quantity: 99999
     },
-      {
+    {
         id: 7,
         name: "Bergkristall Halskette",
         description:"Einheitsgröße - handgefertigt",
@@ -67,7 +65,7 @@ const shopData = [
         image: "https://api.koenigskristall.de/public/BergkristallKett.webp",
         quantity: 99999
     },
-     {
+    {
         id: 8,
         name: "Rosenquarz Trommelstein",
         description:"3cm - 5cm",
@@ -123,6 +121,15 @@ const shopData = [
     },
     {
         id: 14,
+        name: "Amethyst Rohstein",
+        description:"3cm - 5cm",
+        price: 7.00,
+        category: "Amethyst",
+        image: "https://api.koenigskristall.de/public/AmethRoh.webp",
+        quantity: 99999
+    },
+    {
+        id: 15,
         name: "Amethyst Druse / Klein",
         description:"3cm - 5cm",
         price: 10.00,
@@ -131,15 +138,16 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 15,
+        id: 16,
         name: "Amethyst Druse / Groß",
         description:"5cm - 7cm",
         price: 15.00,
         category: "Amethyst",
         image: "https://api.koenigskristall.de/public/AmethDruGr.webp",
         quantity: 99999
-    },{
-        id: 16,
+    },
+    {
+        id: 17,
         name: "Amethyst Spitze",
         description:"7cm - 8cm",             
         price: 16.00,
@@ -148,7 +156,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 17,
+        id: 18,
         name: "Amethyst Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 15.00,
@@ -157,7 +165,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 18,
+        id: 19,
         name: "Amethyst Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
@@ -166,7 +174,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 19,
+        id: 20,
         name: "Citrin Trommelstein",
         description:"2cm - 4cm",
         price: 10.00,
@@ -175,7 +183,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 20,
+        id: 21,
         name: "Citrin Rohstein",
         description:"4cm - 6cm",
         price: 14.00,
@@ -184,7 +192,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 21,
+        id: 22,
         name: "Citrin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
@@ -193,7 +201,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 22,
+        id: 23,
         name: "Citrin Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
@@ -202,7 +210,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 23,
+        id: 24,
         name: "Orangencalcit Trommelstein",
         description:"3cm - 5cm",
         price: 10.00,
@@ -211,7 +219,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 24,
+        id: 25,
         name: "Orangencalcit Rohstein",
         description:"5cm - 7cm",
         price: 14.00,
@@ -220,7 +228,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 25,
+        id: 26,
         name: "Karneol Trommelstein",
         description:"4cm - 5cm",
         price: 8.00,
@@ -229,7 +237,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 26,
+        id: 27,
         name: "Karneol Rohstein",
         description:"4cm - 6cm",
         price: 8.00,
@@ -238,7 +246,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 27,
+        id: 28,
         name: "Karneol Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
@@ -247,7 +255,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 28,
+        id: 29,
         name: "Mondstein Trommelstein",
         description:"2cm - 3cm",
         price: 12.00,
@@ -257,7 +265,7 @@ const shopData = [
 
     },
     {
-        id: 29,
+        id: 30,
         name: "Mondstein Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
@@ -265,8 +273,8 @@ const shopData = [
         category: "Mondstein",
         quantity: 99999
     },
-     {
-        id: 30,
+    {
+        id: 31,
         name: "Selenit Trommelstein",
         description:"2cm - 3cm",
         price: 5.00,
@@ -274,8 +282,8 @@ const shopData = [
         category: "Selenit",
         quantity: 99999
     },
-     {
-        id: 31,
+    {
+        id: 32,
         name: "Selenit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
@@ -283,8 +291,8 @@ const shopData = [
         category: "Selenit",
         quantity: 99999
     },
-     {
-        id: 32,
+    {
+        id: 33,
         name: "Selenit Kugel",
         description:"3cm - 5cm",
         price: 15.00,
@@ -292,8 +300,8 @@ const shopData = [
         category: "Selenit",
         quantity: 99999
     },
-     {
-        id: 33,
+    {
+        id: 34,
         name: "Selenit Stab",
         description:"10cm - 12cm",
         price: 10.00,
@@ -301,8 +309,8 @@ const shopData = [
         category: "Selenit",
         quantity: 99999
     },
-     {
-        id: 34,
+    {
+        id: 35,
         name: "Aquamarin Trommelstein",
         description:"2cm - 4cm",
         price: 10.00,
@@ -310,8 +318,8 @@ const shopData = [
         category: "Aquamarin",
         quantity: 99999
     },
-     {
-        id: 35,
+    {
+        id: 36,
         name: "Aquamarin Rohstein",
         description:"4cm - 5cm",
         price: 9.00,
@@ -319,8 +327,8 @@ const shopData = [
         category: "Aquamarin",
         quantity: 99999
     },
-     {
-        id: 36,
+    {
+        id: 37,
         name: "Aquamarin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 16.00,
@@ -328,8 +336,8 @@ const shopData = [
         category: "Aquamarin",
         quantity: 99999
     },
-     {
-        id: 37,
+    {
+        id: 38,
         name: "Aquamarin Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
@@ -337,8 +345,8 @@ const shopData = [
         category: "Aquamarin",
         quantity: 99999
     },
-     {
-        id: 38,
+    {
+        id: 39,
         name: "Regenbogenfluorit Trommelstein",
         description:"3cm - 4cm",
         price: 12.00,
@@ -346,8 +354,8 @@ const shopData = [
         category: "Regenbogenfluorit",
         quantity: 99999
     },
-     {
-        id: 39,
+    {
+        id: 40,
         name: "Regenbogenfluorit Rohstein",
         description:"5cm - 6cm",
         price: 10.00,
@@ -355,8 +363,8 @@ const shopData = [
         category: "Regenbogenfluorit",
         quantity: 99999
     },
-     {
-        id: 40,
+    {
+        id: 41,
         name: "Regenbogenfluorit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 10.00,
@@ -365,7 +373,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 41,
+        id: 42,
         name: "Grüner Fluorit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
@@ -374,7 +382,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 42,
+        id: 43,
         name: "Grüner Fluorit Rohstein",
         description:"4cm - 6cm",
         price: 10.00,
@@ -383,7 +391,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 43,
+        id: 44,
         name: "Aventurin Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
@@ -391,8 +399,8 @@ const shopData = [
         category: "Aventurin",
         quantity: 99999
     },
-     {
-        id: 44,
+    {
+        id: 45,
         name: "Aventurin Rohstein",
         description:"3cm - 5cm",
         price: 8.00,
@@ -400,8 +408,8 @@ const shopData = [
         category: "Aventurin",
         quantity: 99999
     },
-     {
-        id: 45,
+    {
+        id: 46,
         name: "Aventurin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 9.00,
@@ -409,8 +417,8 @@ const shopData = [
         category: "Aventurin",
         quantity: 99999
     },
-     {
-        id: 46,
+    {
+        id: 47,
         name: "Malachit Trommelstein",
         description:"3cm - 4cm",
         price: 14.00,
@@ -418,8 +426,8 @@ const shopData = [
         category: "Malachit",
         quantity: 99999
     },
-     {
-        id: 47,
+    {
+        id: 48,
         name: "Malachit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
@@ -427,8 +435,8 @@ const shopData = [
         category: "Malachit",
         quantity: 99999
     },
-     {
-        id: 48,
+    {
+        id: 49,
         name: "Malachit Halskette",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
@@ -436,8 +444,8 @@ const shopData = [
         category: "Malachit",
         quantity: 99999
     },
-     {
-        id: 49,
+    {
+        id: 50,
         name: "Roter Jaspis Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
@@ -445,8 +453,8 @@ const shopData = [
         category: "Jaspis",
         quantity: 99999
     },
-     {
-        id: 50,
+    {
+        id: 51,
         name: "Algen Jaspis Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
@@ -454,8 +462,8 @@ const shopData = [
         category: "Jaspis",
         quantity: 99999
     },
-     {
-        id: 51,
+    {
+        id: 52,
         name: "Labradorit Trommelstein",
         description:"2cm - 3cm",
         price: 12.00,
@@ -463,8 +471,8 @@ const shopData = [
         category: "Labradorit",
         quantity: 99999
     },
-     {
-        id: 52,
+    {
+        id: 53,
         name: "Labradorit Freeform / Groß",
         description:"6cm - 10cm",
         price: 40.00,
@@ -472,8 +480,8 @@ const shopData = [
         category: "Labradorit",
         quantity: 99999
     },
-     {
-        id: 53,
+    {
+        id: 54,
         name: "Labradorit Rohstein",
         description:"3cm - 6cm",
         price: 12.00,
@@ -481,8 +489,8 @@ const shopData = [
         category: "Labradorit",
         quantity: 99999
     },
-     {
-        id: 54,
+    {
+        id: 55,
         name: "Labradorit Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 14.00,
@@ -490,8 +498,8 @@ const shopData = [
         category: "Labradorit",
         quantity: 99999
     },
-     {
-        id: 55,
+    {
+        id: 56,
         name: "Labradorit Halskette ",
         description:"Einheitsgröße - handgefertigt",
         price: 20.00,
@@ -499,8 +507,8 @@ const shopData = [
         category: "Labradorit",
         quantity: 99999
     },
-     {
-        id: 56,
+    {
+        id: 57,
         name: "Rauchquarz Trommelstein",
         description:"3cm - 4cm",
         price: 12.00,
@@ -508,8 +516,8 @@ const shopData = [
         category: "Rauchquarz",
         quantity: 99999
     },
-     {
-        id: 57,
+    {
+        id: 58,
         name: "Rauchquarz Rohstein",
         description:"5cm - 6cm",
         price: 10.00,
@@ -517,8 +525,8 @@ const shopData = [
         category: "Rauchquarz",
         quantity: 99999
     },
-     {
-        id: 58,
+    {
+        id: 59,
         name: "Rauchquarz Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
@@ -526,8 +534,8 @@ const shopData = [
         category: "Rauchquarz",
         quantity: 99999
     },
-     {
-        id: 59,
+    {
+        id: 60,
         name: "Pyrit Kugel",
         description:"3cm - 4cm",
         price: 12.00,
@@ -535,8 +543,8 @@ const shopData = [
         category: "Pyrit",
         quantity: 99999
     },
-     {
-        id: 60,
+    {
+        id: 61,
         name: "Pyrit Würfel",
         description:"2cm - 4cm",
         price: 10.00,
@@ -544,8 +552,8 @@ const shopData = [
         category: "Pyrit",
         quantity: 99999
     },
-     {
-        id: 61,
+    {
+        id: 62,
         name: "Tigerauge Trommelstein",
         description:"3cm - 4cm",
         price: 10.00,
@@ -553,8 +561,8 @@ const shopData = [
         category: "Tigerauge",
         quantity: 99999
     },
-     {
-        id: 62,
+    {
+        id: 63,
         name: "Tigerauge Rohstein",
         description:"4cm - 5cm",
         price: 6.00,
@@ -562,8 +570,8 @@ const shopData = [
         category: "Tigerauge",
         quantity: 99999
     },
-     {
-        id: 63,
+    {
+        id: 64,
         name: "Tigerauge Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 12.00,
@@ -571,8 +579,8 @@ const shopData = [
         category: "Tigerauge",
         quantity: 99999
     },
-     {
-        id: 64,
+    {
+        id: 65,
         name: "Schwarzer Turmalin Trommelstein",
         description:"2cm - 4cm",
         price: 8.00,
@@ -580,8 +588,8 @@ const shopData = [
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
-     {
-        id: 65,
+    {
+        id: 66,
         name: "Schwarzer Turmalin Rohstein / Klein",
         description:"4cm - 5cm",
         price: 10.00,
@@ -589,8 +597,8 @@ const shopData = [
         category: "Schwarzer Turmalin",
         quantity: 99999
     },
-     {
-        id: 66,
+    {
+        id: 67,
         name: "Schwarzer Turmalin Rohstein / Groß",
         description:"5cm - 8cm",
         price: 25.00,
@@ -599,7 +607,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 67,
+        id: 68,
         name: "Schwarzer Turmalin Armband",
         description:"Einheitsgröße - handgefertigt",
         price: 15.00,
@@ -608,7 +616,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 68,
+        id: 69,
         name: "Achatscheibe  mit Bergkristall Blau / Klein",
         description:"6cm - 8cm",
         price: 15.00,
@@ -617,7 +625,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 69,
+        id: 70,
         name: "Achatscheibe mit Bergkristall Blau / Groß",
         description:"8cm - 12cm",
         price: 30.00,
@@ -626,7 +634,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 70,
+        id: 71,
         name: "Achatscheibe mit Bergkristall Pink / Klein",
         description:"6cm - 8cm",
         price: 15.00,
@@ -635,7 +643,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 71,
+        id: 72,
         name: "Achatscheibe mit Bergkristall Pink / Groß",
         description:"8cm - 12cm",
         price: 30.00,
@@ -644,7 +652,7 @@ const shopData = [
         quantity: 99999
     },
     {
-        id: 72,
+        id: 73,
         name: "Achatscheibe mit Bergkristall Grün / Klein",
         description:"6cm - 8cm",
         price: 15.00,
@@ -655,4 +663,3 @@ const shopData = [
 ]
 
 export default shopData;
-
