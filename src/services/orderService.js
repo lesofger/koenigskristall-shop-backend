@@ -429,38 +429,37 @@ const getOrderByIdAdmin = async (orderId) => {
  * @param {Object} options - Options object with startDate and endDate
  * @returns {Object} Statistics
  */
+ 
 const getOrderStatistics = async (options = {}) => {
   try {
     const { startDate, endDate } = options;
     const { Op } = require('sequelize');
     
-    const dateConditions = {};
+    // only filter by date range if provided
+    const whereConditions = {};
     
-    if (startDate) {
-      const startDateTime = new Date(startDate + 'T00:00:00.000Z');
-      dateConditions[Op.gte] = startDateTime;
+    if (startDate || endDate) {
+      whereConditions.createdAt = {};
+      
+      if (startDate) {
+        const startDateTime = new Date(startDate + 'T00:00:00.000Z');
+        whereConditions.createdAt[Op.gte] = startDateTime;
+      }
+      
+      if (endDate) {
+        const endDateTime = new Date(endDate + 'T23:59:59.999Z');
+        whereConditions.createdAt[Op.lte] = endDateTime;
+      }
     }
-    
-    if (endDate) {
-      const endDateTime = new Date(endDate + 'T23:59:59.999Z');
-      dateConditions[Op.lte] = endDateTime;
-    }
-    
-    if (!startDate && !endDate) {
-      const now = new Date();
-      const defaultStartDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-      dateConditions[Op.gte] = defaultStartDate;
-    }
+    // If neither startDate nor endDate is provided: whereConditions remains empty = all orders
     
     const totalOrders = await Order.count({
-      where: {
-        createdAt: dateConditions
-      }
+      where: whereConditions
     });
     
     const totalRevenue = await Order.sum('totalAmount', {
       where: {
-        createdAt: dateConditions,
+        ...whereConditions,
         status: {
           [Op.in]: ['pending', 'processing', 'shipped', 'delivered']
         }
@@ -472,9 +471,7 @@ const getOrderStatistics = async (options = {}) => {
         'status',
         [sequelize.fn('COUNT', sequelize.col('id')), 'count']
       ],
-      where: {
-        createdAt: dateConditions
-      },
+      where: whereConditions,
       group: ['status']
     });
     
@@ -484,9 +481,7 @@ const getOrderStatistics = async (options = {}) => {
         [sequelize.fn('COUNT', sequelize.col('id')), 'count'],
         [sequelize.fn('SUM', sequelize.col('totalAmount')), 'revenue']
       ],
-      where: {
-        createdAt: dateConditions
-      },
+      where: whereConditions,
       group: [sequelize.fn('DATE', sequelize.col('createdAt'))],
       order: [[sequelize.fn('DATE', sequelize.col('createdAt')), 'ASC']]
     });
